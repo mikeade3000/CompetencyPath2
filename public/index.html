@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CompetencyPath – Online Edition - BY DR. MICHAEL ADELANI ADEWUSI FOR KAMPALA INTERNATIONAL UNIVERSITY, UGANDA</title>
+<title>CompetencyPath – Online Edition · BY DR. MICHAEL ADELANI ADEWUSI FOR KAMPALA INTERNATIONAL UNIVERSITY, UGANDA</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
   :root{
@@ -20,462 +20,176 @@
     --sidebar-w:300px;
     --header-h:66px;
   }
-
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{height:100%}
-  body{
-    font-family:'DM Sans',sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    overflow:auto;
-  }
-
-  header{
-    height:var(--header-h);
-    background:linear-gradient(135deg,#0a5d6e 0%,#0d7d8c 50%,#1fa882 100%);
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 18px;
-    box-shadow:0 2px 24px rgba(13,125,140,.35);
-    z-index:5;
-    flex-shrink:0;
-  }
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column;overflow:auto}
+  header{height:var(--header-h);background:linear-gradient(135deg,#0a5d6e 0%,#0d7d8c 50%,#1fa882 100%);display:flex;align-items:center;justify-content:space-between;padding:0 18px;box-shadow:0 2px 24px rgba(13,125,140,.35);z-index:5;flex-shrink:0}
   .hdr-left,.hdr-right{display:flex;align-items:center;gap:12px}
-  .menu-btn{
-    background:rgba(255,255,255,.15);
-    border:none;
-    border-radius:10px;
-    width:40px;height:40px;
-    cursor:pointer;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    gap:5px;
-  }
+  .menu-btn{background:rgba(255,255,255,.15);border:none;border-radius:10px;width:40px;height:40px;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px}
   .menu-btn span{display:block;width:18px;height:2px;background:#fff;border-radius:2px}
-  .brand-name{
-    font-family:'Syne',sans-serif;
-    font-weight:800;
-    font-size:18px;
-    color:#fff;
-  }
-  .brand-sub{
-    color:rgba(255,255,255,.72);
-    font-size:10px;
-    margin-top:2px;
-  }
-  .btn-header{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    background:rgba(255,255,255,.16);
-    border:1.4px solid rgba(255,255,255,.3);
-    color:#fff;
-    border-radius:10px;
-    padding:9px 14px;
-    cursor:pointer;
-    font-weight:600;
-    font-size:13px;
-  }
+  .brand-name{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:#fff}
+  .brand-sub{color:rgba(255,255,255,.72);font-size:10px;margin-top:2px}
+  .btn-header{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.16);border:1.4px solid rgba(255,255,255,.3);color:#fff;border-radius:10px;padding:9px 14px;cursor:pointer;font-weight:600;font-size:13px}
   .btn-header:hover{background:rgba(255,255,255,.24)}
   .hdr-unit-info{display:none;align-items:center;gap:10px}
   .hdr-unit-label .lbl{font-size:10px;color:rgba(255,255,255,.68);text-transform:uppercase;letter-spacing:.08em}
   .hdr-unit-label .val{font-family:'Syne',sans-serif;font-size:13px;color:#fff;font-weight:700}
   .ring-svg{transform:rotate(-90deg)}
-
-  .layout{
-    display:flex;
-    flex:1;
-    min-height:0;
-    overflow:hidden;
-  }
-
-  aside{
-    width:var(--sidebar-w);
-    min-width:var(--sidebar-w);
-    background:#fff;
-    border-right:1px solid var(--border);
-    display:flex;
-    flex-direction:column;
-    overflow:hidden;
-    transition:width .28s ease,min-width .28s ease;
-    min-height:0;
-  }
+  .layout{display:flex;flex:1;min-height:0;overflow:hidden}
+  aside{width:var(--sidebar-w);min-width:var(--sidebar-w);background:#fff;border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden;transition:width .28s ease,min-width .28s ease;min-height:0}
   aside.collapsed{width:0;min-width:0}
-  .sidebar-inner{
-    width:var(--sidebar-w);
-    min-width:var(--sidebar-w);
-    display:flex;
-    flex-direction:column;
-    height:100%;
-    min-height:0;
-  }
+  .sidebar-inner{width:var(--sidebar-w);min-width:var(--sidebar-w);display:flex;flex-direction:column;height:100%;min-height:0}
   .sidebar-units{padding:14px 12px 10px;border-bottom:1px solid var(--border)}
-  .sidebar-steps{
-    padding:12px 10px;
-    overflow-y:auto;
-    overflow-x:hidden;
-    flex:1;
-    min-height:0;
-    scrollbar-width:thin;
-    scrollbar-color:#c7dde4 transparent;
-  }
+  .sidebar-steps{padding:12px 10px;overflow-y:auto;overflow-x:hidden;flex:1;min-height:0;scrollbar-width:thin;scrollbar-color:#c7dde4 transparent}
   .sidebar-steps::-webkit-scrollbar{width:7px}
   .sidebar-steps::-webkit-scrollbar-thumb{background:#c7dde4;border-radius:8px}
-
-  .sec-label{
-    font-family:'Syne',sans-serif;
-    font-weight:700;
-    font-size:10px;
-    color:var(--teal);
-    text-transform:uppercase;
-    letter-spacing:.1em;
-    margin-bottom:10px;
-  }
-  .unit-card{
-    padding:10px 11px;
-    border-radius:11px;
-    border:1.5px solid transparent;
-    cursor:pointer;
-    margin-bottom:6px;
-    transition:all .18s;
-  }
+  .sec-label{font-family:'Syne',sans-serif;font-weight:700;font-size:10px;color:var(--teal);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px}
+  .unit-card{padding:10px 11px;border-radius:11px;border:1.5px solid transparent;cursor:pointer;margin-bottom:6px;transition:all .18s}
   .unit-card:hover{background:rgba(13,125,140,.05)}
-  .unit-card.active{
-    background:linear-gradient(135deg,rgba(13,125,140,.1),rgba(39,174,135,.08));
-    border-color:var(--green);
-  }
+  .unit-card.active{background:linear-gradient(135deg,rgba(13,125,140,.1),rgba(39,174,135,.08));border-color:var(--green)}
   .unit-card-row{display:flex;justify-content:space-between;align-items:center;gap:8px}
-  .unit-name{
-    flex:1;
-    font-size:13px;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-  }
+  .unit-name{flex:1;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .unit-desc-preview{font-size:11px;color:var(--text-muted);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:none}
+  .unit-card.active .unit-desc-preview{display:block}
   .unit-bar{height:3px;background:#e6eff2;border-radius:2px;margin-top:7px;overflow:hidden}
   .unit-bar-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--green));border-radius:2px}
-
-  .step-nav-item{
-    display:flex;
-    gap:10px;
-    align-items:center;
-    padding:8px 9px;
-    border-radius:9px;
-    border:1.5px solid transparent;
-    margin-bottom:4px;
-    cursor:pointer;
-    transition:all .18s;
-  }
+  .step-nav-item{display:flex;gap:10px;align-items:center;padding:8px 9px;border-radius:9px;border:1.5px solid transparent;margin-bottom:4px;cursor:pointer;transition:all .18s}
   .step-nav-item:hover{background:rgba(13,125,140,.05)}
-  .step-dot{
-    width:28px;height:28px;border-radius:50%;
-    display:flex;align-items:center;justify-content:center;
-    border:2px solid #d8eaed;background:#f0f4f5;
-    font-size:11px;flex-shrink:0;
-  }
+  .step-dot{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid #d8eaed;background:#f0f4f5;font-size:11px;flex-shrink:0}
   .step-nav-text{flex:1;min-width:0}
   .step-nav-num{font-size:9px;font-weight:700;color:#9aa}
   .step-nav-title{font-size:11px;color:#4a7080;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .step-mini-bar{height:2px;background:#e5f0f3;border-radius:2px;margin-top:4px;overflow:hidden}
   .step-mini-fill{height:100%;border-radius:2px}
-
   .unit-tools{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap}
-  .btn-add-unit,
-  .btn-download-unit{
-    flex:1;
-    min-width:125px;
-    background:none;
-    border:1.5px dashed #b7d9e1;
-    border-radius:10px;
-    padding:9px;
-    font-size:13px;
-    color:var(--teal);
-    cursor:pointer;
-    font-weight:600;
-  }
-  .btn-download-unit{
-    border-style:solid;
-    background:#f7fffd;
-  }
+  .btn-add-unit,.btn-download-unit{flex:1;min-width:125px;background:none;border:1.5px dashed #b7d9e1;border-radius:10px;padding:9px;font-size:13px;color:var(--teal);cursor:pointer;font-weight:600}
+  .btn-download-unit{border-style:solid;background:#f7fffd}
   .btn-add-unit:hover,.btn-download-unit:hover{background:rgba(13,125,140,.05)}
   .add-unit-form{display:none;margin-top:8px}
-  .add-unit-input{
-    width:100%;
-    border:1.5px solid var(--green);
-    border-radius:9px;
-    padding:9px 10px;
-    font-size:13px;
-    outline:none;
-    margin-bottom:6px;
-  }
+  .add-unit-input{width:100%;border:1.5px solid var(--green);border-radius:9px;padding:9px 10px;font-size:13px;outline:none;margin-bottom:6px}
   .add-unit-btns{display:flex;gap:6px}
-  .btn-confirm,.btn-cancel{
-    flex:1;
-    border:none;
-    border-radius:8px;
-    padding:8px;
-    cursor:pointer;
-    font-size:12px;
-    font-weight:600;
-  }
+  .btn-confirm,.btn-cancel{flex:1;border:none;border-radius:8px;padding:8px;cursor:pointer;font-size:12px;font-weight:600}
   .btn-confirm{background:linear-gradient(135deg,var(--teal),var(--green));color:#fff}
   .btn-cancel{background:#eef6f7;color:#555}
-
-  main{
-    flex:1;
-    overflow-y:auto;
-    overflow-x:hidden;
-    padding:24px 28px;
-    min-height:0;
-    scrollbar-width:thin;
-    scrollbar-color:#c7dde4 transparent;
-  }
+  main{flex:1;overflow-y:auto;overflow-x:hidden;padding:24px 28px;min-height:0;scrollbar-width:thin;scrollbar-color:#c7dde4 transparent}
   main::-webkit-scrollbar{width:8px}
   main::-webkit-scrollbar-thumb{background:#c7dde4;border-radius:8px}
-
   .content-wrap{max-width:980px;margin:0 auto}
-  .empty-state{
-    height:64vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    color:var(--text-muted);
-    gap:12px;
-  }
+  .empty-state{height:64vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:var(--text-muted);gap:12px}
   .empty-state .big-icon{font-size:54px}
 
-  .step-header{
-    border-radius:18px;
-    padding:22px 24px;
-    margin-bottom:22px;
-    position:relative;
-    overflow:hidden;
+  /* Unit Description Card */
+  .unit-desc-card{
+    background:#fff;
+    border-radius:16px;
+    border:1.5px solid #dff0f3;
+    padding:18px 22px;
+    margin-bottom:18px;
+    box-shadow:0 2px 14px rgba(13,125,140,.05);
   }
-  .step-header::before{
-    content:'';
-    position:absolute;
-    right:-26px;top:-26px;
-    width:128px;height:128px;border-radius:50%;
-    background:rgba(255,255,255,.08);
+  .unit-desc-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
   }
+  .unit-desc-title{
+    font-family:'Syne',sans-serif;
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.09em;
+    color:var(--teal);
+  }
+  .unit-desc-badge{
+    font-size:10px;
+    padding:3px 9px;
+    border-radius:999px;
+    background:rgba(13,125,140,.08);
+    color:var(--teal);
+    font-weight:600;
+  }
+  .unit-desc-textarea{
+    width:100%;
+    border:1.5px solid #d0e8ef;
+    border-radius:10px;
+    padding:10px 13px;
+    font-size:14px;
+    font-family:'DM Sans',sans-serif;
+    color:var(--text);
+    background:#f8fffe;
+    outline:none;
+    resize:vertical;
+    min-height:70px;
+    transition:border-color .18s,box-shadow .18s;
+    line-height:1.55;
+  }
+  .unit-desc-textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(39,174,135,.12)}
+  .unit-desc-textarea.ai-populated{border-color:#82c341;background:#f6fff0}
+  .unit-desc-hint{font-size:11px;color:var(--text-muted);margin-top:6px}
+
+  .step-header{border-radius:18px;padding:22px 24px;margin-bottom:22px;position:relative;overflow:hidden}
+  .step-header::before{content:'';position:absolute;right:-26px;top:-26px;width:128px;height:128px;border-radius:50%;background:rgba(255,255,255,.08)}
   .step-header-inner{display:flex;gap:14px;position:relative;z-index:1}
   .step-icon-big{font-size:36px;line-height:1}
-  .step-num-label{
-    font-family:'Syne',sans-serif;
-    font-size:10px;
-    font-weight:700;
-    color:rgba(255,255,255,.7);
-    text-transform:uppercase;
-    letter-spacing:.1em;
-    margin-bottom:4px;
-  }
-  .step-title{
-    font-family:'Syne',sans-serif;
-    font-size:20px;
-    font-weight:800;
-    color:#fff;
-    line-height:1.2;
-  }
+  .step-num-label{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
+  .step-title{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#fff;line-height:1.2}
   .step-progress-row{margin-top:12px;display:flex;align-items:center;gap:10px}
   .step-progress-bar{flex:1;height:5px;background:rgba(255,255,255,.24);border-radius:3px;overflow:hidden}
   .step-progress-fill{height:100%;background:#fff;border-radius:3px}
   .step-pct-label{font-size:12px;color:rgba(255,255,255,.92);font-weight:600}
-  .ai-filled-badge{
-    display:inline-flex;
-    align-items:center;
-    gap:5px;
-    margin-top:8px;
-    padding:4px 10px;
-    border-radius:999px;
-    background:rgba(255,255,255,.18);
-    border:1px solid rgba(255,255,255,.35);
-    color:#fff;
+  .ai-filled-badge{display:inline-flex;align-items:center;gap:5px;margin-top:8px;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);color:#fff;font-size:11px;font-weight:600}
+  .step-evaluator-note{
+    margin-top:10px;
+    padding:8px 12px;
+    border-radius:8px;
+    background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.25);
     font-size:11px;
-    font-weight:600;
+    color:rgba(255,255,255,.9);
+    line-height:1.5;
   }
+  .step-evaluator-note strong{font-weight:700}
 
-  .form-card{
-    background:#fff;
-    border-radius:16px;
-    padding:24px 26px;
-    border:1px solid #e3f1f4;
-    box-shadow:0 2px 18px rgba(13,125,140,.06);
-  }
-  .field-group{margin-bottom:20px}
-  .field-label{
-    display:block;
-    margin-bottom:8px;
-    font-family:'Syne',sans-serif;
-    font-size:11px;
-    font-weight:700;
-    text-transform:uppercase;
-    letter-spacing:.07em;
-    color:var(--teal);
-  }
-  .field-input,.field-textarea,.field-select{
-    width:100%;
-    border:1.5px solid #d0e8ef;
-    border-radius:10px;
-    padding:11px 13px;
-    font-size:14px;
-    font-family:'DM Sans',sans-serif;
-    color:var(--text);
-    background:#f8fffe;
-    outline:none;
-    transition:border-color .18s,box-shadow .18s;
-  }
+  .form-card{background:#fff;border-radius:16px;padding:24px 26px;border:1px solid #e3f1f4;box-shadow:0 2px 18px rgba(13,125,140,.06)}
+  .field-group{margin-bottom:22px}
+  .field-label{display:block;margin-bottom:6px;font-family:'Syne',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--teal)}
+  .field-hint{font-size:11px;color:var(--text-muted);margin-bottom:8px;line-height:1.5;padding:6px 10px;background:rgba(13,125,140,.05);border-left:3px solid var(--teal-mid);border-radius:0 6px 6px 0}
+  .field-input,.field-textarea,.field-select{width:100%;border:1.5px solid #d0e8ef;border-radius:10px;padding:11px 13px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--text);background:#f8fffe;outline:none;transition:border-color .18s,box-shadow .18s}
   .field-textarea{min-height:86px;resize:vertical}
-  .field-input:focus,.field-textarea:focus,.field-select:focus{
-    border-color:var(--green);
-    box-shadow:0 0 0 3px rgba(39,174,135,.12);
-  }
-  .field-input.ai-populated,.field-textarea.ai-populated,.field-select.ai-populated{
-    border-color:#82c341;background:#f6fff0;
-  }
-
-  .tag-wrap{
-    border:1.5px solid #d0e8ef;
-    border-radius:10px;
-    padding:8px 10px;
-    background:#f8fffe;
-    min-height:48px;
-  }
+  .field-input:focus,.field-textarea:focus,.field-select:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(39,174,135,.12)}
+  .field-input.ai-populated,.field-textarea.ai-populated,.field-select.ai-populated{border-color:#82c341;background:#f6fff0}
+  .tag-wrap{border:1.5px solid #d0e8ef;border-radius:10px;padding:8px 10px;background:#f8fffe;min-height:48px}
   .tag-wrap.ai-populated{border-color:#82c341;background:#f6fff0}
   .tag-wrap:focus-within{border-color:var(--green);box-shadow:0 0 0 3px rgba(39,174,135,.12)}
   .tags-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
-  .tag-pill{
-    display:flex;align-items:center;gap:5px;
-    background:linear-gradient(135deg,var(--teal),var(--green));
-    color:#fff;border-radius:999px;padding:4px 10px;font-size:12px;
-  }
+  .tag-pill{display:flex;align-items:center;gap:5px;background:linear-gradient(135deg,var(--teal),var(--green));color:#fff;border-radius:999px;padding:4px 10px;font-size:12px}
   .tag-remove{background:none;border:none;color:#fff;cursor:pointer;font-size:14px}
   .tag-input-field{border:none;background:transparent;outline:none;width:100%;font-size:14px}
-
   .checkbox-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-  .check-item{
-    display:flex;align-items:center;gap:8px;
-    border:1.5px solid #d0e8ef;
-    background:#f8fffe;
-    border-radius:8px;
-    padding:8px 10px;
-    cursor:pointer;
-  }
+  .check-item{display:flex;align-items:center;gap:8px;border:1.5px solid #d0e8ef;background:#f8fffe;border-radius:8px;padding:8px 10px;cursor:pointer}
   .check-item.checked{border-color:var(--green);background:rgba(39,174,135,.07)}
-  .check-box{
-    width:18px;height:18px;border-radius:5px;border:2px solid #b0cdd5;
-    display:flex;align-items:center;justify-content:center;flex-shrink:0;
-  }
+  .check-box{width:18px;height:18px;border-radius:5px;border:2px solid #b0cdd5;display:flex;align-items:center;justify-content:center;flex-shrink:0}
   .check-item.checked .check-box{background:var(--green);border-color:var(--green)}
   .check-tick{display:none;color:#fff;font-size:10px;font-weight:700}
   .check-item.checked .check-tick{display:block}
   .check-label{font-size:13px}
-
-  .topic-table-wrap{
-    border:1.5px solid #d0e8ef;
-    border-radius:14px;
-    background:#fbffff;
-    overflow:hidden;
-  }
-  .topic-table-tools{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:12px 14px;
-    border-bottom:1px solid #e3f0f4;
-    background:#f3fbfc;
-    gap:10px;
-    flex-wrap:wrap;
-  }
-  .topic-table-note{
-    font-size:12px;
-    color:var(--text-muted);
-  }
-  .btn-small{
-    border:none;
-    border-radius:9px;
-    padding:8px 12px;
-    cursor:pointer;
-    font-size:12px;
-    font-weight:700;
-  }
-  .btn-add-row{
-    background:linear-gradient(135deg,var(--teal),var(--green));
-    color:#fff;
-  }
-  .btn-remove-row{
-    background:#fff0ef;
-    color:#b73b31;
-    border:1px solid #f0c3be;
-  }
-  .topic-table-scroll{
-    overflow:auto;
-  }
-  .topic-table{
-    width:100%;
-    border-collapse:collapse;
-    min-width:880px;
-  }
-  .topic-table th,
-  .topic-table td{
-    border-bottom:1px solid #edf4f6;
-    vertical-align:top;
-    padding:10px;
-  }
-  .topic-table th{
-    background:#f8fcfd;
-    color:var(--teal);
-    font-size:12px;
-    font-family:'Syne',sans-serif;
-    text-transform:uppercase;
-    letter-spacing:.05em;
-    text-align:left;
-  }
-  .table-input,
-  .table-textarea{
-    width:100%;
-    border:1.5px solid #d6eaef;
-    border-radius:8px;
-    padding:9px 10px;
-    font-size:13px;
-    font-family:'DM Sans',sans-serif;
-    background:#fff;
-    color:var(--text);
-    outline:none;
-  }
-  .table-input:focus,
-  .table-textarea:focus{
-    border-color:var(--green);
-    box-shadow:0 0 0 3px rgba(39,174,135,.12);
-  }
-  .table-textarea{
-    min-height:74px;
-    resize:vertical;
-  }
-  .topic-hours-total{
-    padding:12px 14px;
-    background:#f8fffb;
-    border-top:1px solid #e3f0e8;
-    font-size:13px;
-    font-weight:700;
-    color:#176344;
-  }
-
+  .topic-table-wrap{border:1.5px solid #d0e8ef;border-radius:14px;background:#fbffff;overflow:hidden}
+  .topic-table-tools{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-bottom:1px solid #e3f0f4;background:#f3fbfc;gap:10px;flex-wrap:wrap}
+  .topic-table-note{font-size:12px;color:var(--text-muted)}
+  .btn-small{border:none;border-radius:9px;padding:8px 12px;cursor:pointer;font-size:12px;font-weight:700}
+  .btn-add-row{background:linear-gradient(135deg,var(--teal),var(--green));color:#fff}
+  .btn-remove-row{background:#fff0ef;color:#b73b31;border:1px solid #f0c3be}
+  .topic-table-scroll{overflow:auto}
+  .topic-table{width:100%;border-collapse:collapse;min-width:880px}
+  .topic-table th,.topic-table td{border-bottom:1px solid #edf4f6;vertical-align:top;padding:10px}
+  .topic-table th{background:#f8fcfd;color:var(--teal);font-size:12px;font-family:'Syne',sans-serif;text-transform:uppercase;letter-spacing:.05em;text-align:left}
+  .table-input,.table-textarea{width:100%;border:1.5px solid #d6eaef;border-radius:8px;padding:9px 10px;font-size:13px;font-family:'DM Sans',sans-serif;background:#fff;color:var(--text);outline:none}
+  .table-input:focus,.table-textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(39,174,135,.12)}
+  .table-textarea{min-height:74px;resize:vertical}
+  .topic-hours-total{padding:12px 14px;background:#f8fffb;border-top:1px solid #e3f0e8;font-size:13px;font-weight:700;color:#176344}
   .step-nav-btns{display:flex;justify-content:space-between;align-items:center;margin-top:20px}
-  .btn-prev,.btn-next,.btn-complete{
-    padding:10px 22px;
-    border-radius:10px;
-    font-size:14px;
-    font-weight:600;
-    cursor:pointer;
-  }
+  .btn-prev,.btn-next,.btn-complete{padding:10px 22px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer}
   .btn-prev{border:1.5px solid #d0e8ef;background:#fff;color:var(--teal)}
   .btn-next{border:none;color:#fff}
   .btn-complete{border:none;background:linear-gradient(135deg,var(--green),var(--green-light));color:#fff}
@@ -484,225 +198,51 @@
   .dot{width:8px;height:8px;border-radius:6px;background:#d0e8ef;cursor:pointer}
   .dot.active{width:20px}
   .dot.done{background:var(--green-light)}
-
-  .modal-backdrop{
-    position:fixed;inset:0;
-    background:rgba(5,30,40,.55);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:16px;
-    z-index:100;
-  }
+  .modal-backdrop{position:fixed;inset:0;background:rgba(5,30,40,.55);display:none;align-items:center;justify-content:center;padding:16px;z-index:100}
   .modal-backdrop.open{display:flex}
-  .modal{
-    width:100%;
-    max-width:720px;
-    background:#fff;
-    border-radius:22px;
-    overflow:hidden;
-    box-shadow:0 24px 70px rgba(5,30,40,.25);
-    max-height:92vh;
-    display:flex;
-    flex-direction:column;
-  }
-  .modal-head{
-    padding:22px 28px 18px;
-    background:linear-gradient(135deg,var(--teal-dark),var(--teal),#1fa882);
-    position:relative;
-  }
-  .modal-head h2{
-    font-family:'Syne',sans-serif;
-    color:#fff;
-    font-size:20px;
-    margin-bottom:5px;
-  }
+  .modal{width:100%;max-width:720px;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 24px 70px rgba(5,30,40,.25);max-height:92vh;display:flex;flex-direction:column}
+  .modal-head{padding:22px 28px 18px;background:linear-gradient(135deg,var(--teal-dark),var(--teal),#1fa882);position:relative}
+  .modal-head h2{font-family:'Syne',sans-serif;color:#fff;font-size:20px;margin-bottom:5px}
   .modal-head p{font-size:13px;color:rgba(255,255,255,.76)}
-  .modal-close-x{
-    position:absolute;
-    right:16px;top:16px;
-    width:31px;height:31px;
-    border:none;border-radius:8px;
-    background:rgba(255,255,255,.2);
-    color:#fff;cursor:pointer;font-size:16px;
-  }
-  .modal-body{
-    padding:20px 28px;
-    overflow-y:auto;
-    scrollbar-width:thin;
-    scrollbar-color:#c7dde4 transparent;
-  }
+  .modal-close-x{position:absolute;right:16px;top:16px;width:31px;height:31px;border:none;border-radius:8px;background:rgba(255,255,255,.2);color:#fff;cursor:pointer;font-size:16px}
+  .modal-body{padding:20px 28px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#c7dde4 transparent}
   .modal-body::-webkit-scrollbar{width:8px}
   .modal-body::-webkit-scrollbar-thumb{background:#c7dde4;border-radius:8px}
-
-  .import-tabs{
-    display:flex;
-    gap:4px;
-    background:#f0f9fa;
-    border-radius:10px;
-    padding:4px;
-    margin-bottom:18px;
-  }
-  .import-tab{
-    flex:1;
-    border:none;
-    border-radius:8px;
-    padding:8px;
-    background:transparent;
-    color:var(--text-muted);
-    cursor:pointer;
-    font-size:13px;
-    font-weight:600;
-  }
-  .import-tab.active{
-    background:#fff;
-    color:var(--teal);
-    box-shadow:0 1px 6px rgba(13,125,140,.12);
-  }
-
-  .hint-box{
-    background:rgba(13,125,140,.07);
-    border:1px solid rgba(13,125,140,.18);
-    border-radius:10px;
-    padding:12px 14px;
-    font-size:13px;
-    line-height:1.55;
-    margin-bottom:16px;
-  }
+  .import-tabs{display:flex;gap:4px;background:#f0f9fa;border-radius:10px;padding:4px;margin-bottom:18px}
+  .import-tab{flex:1;border:none;border-radius:8px;padding:8px;background:transparent;color:var(--text-muted);cursor:pointer;font-size:13px;font-weight:600}
+  .import-tab.active{background:#fff;color:var(--teal);box-shadow:0 1px 6px rgba(13,125,140,.12)}
+  .hint-box{background:rgba(13,125,140,.07);border:1px solid rgba(13,125,140,.18);border-radius:10px;padding:12px 14px;font-size:13px;line-height:1.55;margin-bottom:16px}
   .hint-box strong{color:var(--teal)}
-
-  .import-textarea{
-    width:100%;
-    min-height:220px;
-    border:1.5px solid #d0e8ef;
-    border-radius:12px;
-    padding:14px 16px;
-    background:#f8fffe;
-    font-family:'DM Sans',sans-serif;
-    font-size:14px;
-    color:var(--text);
-    line-height:1.6;
-    resize:vertical;
-    outline:none;
-  }
+  .import-textarea{width:100%;min-height:220px;border:1.5px solid #d0e8ef;border-radius:12px;padding:14px 16px;background:#f8fffe;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);line-height:1.6;resize:vertical;outline:none}
   .import-textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(39,174,135,.12)}
   .char-count{text-align:right;font-size:11px;color:var(--text-muted);margin-top:5px}
-
-  .file-box{
-    border:2px dashed #bfdde4;
-    border-radius:12px;
-    padding:18px;
-    background:#f8fffe;
-    text-align:center;
-  }
+  .file-box{border:2px dashed #bfdde4;border-radius:12px;padding:18px;background:#f8fffe;text-align:center}
   .file-box.dragover{border-color:var(--green);background:#f2fff7}
-  .file-meta{
-    margin-top:10px;
-    padding:10px 12px;
-    border-radius:10px;
-    background:rgba(13,125,140,.06);
-    border:1px solid rgba(13,125,140,.14);
-    font-size:13px;
-    display:none;
-  }
-
-  .target-unit-row{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-top:14px;
-  }
-  .target-unit-row label{
-    font-family:'Syne',sans-serif;
-    font-size:11px;
-    font-weight:700;
-    color:var(--teal);
-    text-transform:uppercase;
-    letter-spacing:.07em;
-    white-space:nowrap;
-  }
-  .target-unit-select{
-    flex:1;
-    border:1.5px solid #d0e8ef;
-    border-radius:9px;
-    padding:9px 12px;
-    background:#f8fffe;
-    outline:none;
-    font-size:13px;
-  }
-
-  .btn-generate{
-    width:100%;
-    margin-top:16px;
-    padding:14px;
-    border:none;
-    border-radius:12px;
-    background:linear-gradient(135deg,var(--teal),var(--green));
-    color:#fff;
-    font-weight:700;
-    font-size:15px;
-    cursor:pointer;
-    box-shadow:0 4px 16px rgba(13,125,140,.3);
-  }
+  .file-meta{margin-top:10px;padding:10px 12px;border-radius:10px;background:rgba(13,125,140,.06);border:1px solid rgba(13,125,140,.14);font-size:13px;display:none}
+  .target-unit-row{display:flex;align-items:center;gap:10px;margin-top:14px}
+  .target-unit-row label{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.07em;white-space:nowrap}
+  .target-unit-select{flex:1;border:1.5px solid #d0e8ef;border-radius:9px;padding:9px 12px;background:#f8fffe;outline:none;font-size:13px}
+  .btn-generate{width:100%;margin-top:16px;padding:14px;border:none;border-radius:12px;background:linear-gradient(135deg,var(--teal),var(--green));color:#fff;font-weight:700;font-size:15px;cursor:pointer;box-shadow:0 4px 16px rgba(13,125,140,.3)}
   .btn-generate:disabled{opacity:.66;cursor:not-allowed}
-
   .ai-status{display:none;margin-top:16px;padding:14px 16px;border-radius:12px;font-size:13px;line-height:1.55}
   .ai-status.loading{display:flex;align-items:center;gap:10px;background:rgba(13,125,140,.07);border:1px solid rgba(13,125,140,.18);color:var(--teal)}
   .ai-status.success{display:block;background:rgba(39,174,135,.1);border:1px solid rgba(39,174,135,.28);color:#176344}
   .ai-status.error{display:block;background:rgba(220,60,60,.08);border:1px solid rgba(220,60,60,.22);color:#a02020}
-  .spinner{
-    width:20px;height:20px;
-    border:2.5px solid rgba(13,125,140,.22);
-    border-top-color:var(--teal);
-    border-radius:50%;
-    animation:spin .8s linear infinite;
-    flex-shrink:0;
-  }
+  .spinner{width:20px;height:20px;border:2.5px solid rgba(13,125,140,.22);border-top-color:var(--teal);border-radius:50%;animation:spin .8s linear infinite;flex-shrink:0}
   @keyframes spin{to{transform:rotate(360deg)}}
-
   .gen-steps{list-style:none;margin-top:10px;display:none}
   .gen-step{display:flex;align-items:center;gap:8px;padding:4px 0;font-size:12px;color:#666}
   .gen-step.done{color:var(--green);font-weight:600}
   .gs-icon{width:18px;text-align:center}
-
-  .complete-modal{
-    background:#fff;
-    border-radius:20px;
-    padding:28px 30px;
-    max-width:460px;
-    width:100%;
-    box-shadow:0 20px 60px rgba(10,40,50,.25);
-  }
+  .complete-modal{background:#fff;border-radius:20px;padding:28px 30px;max-width:460px;width:100%;box-shadow:0 20px 60px rgba(10,40,50,.25)}
   .complete-modal h2{font-family:'Syne',sans-serif;color:var(--teal);font-size:22px;margin-bottom:6px}
   .complete-modal p{font-size:13px;color:var(--text-muted);margin-bottom:18px}
-  .modal-summary-row{
-    display:flex;justify-content:space-between;gap:12px;
-    padding:6px 0;border-bottom:1px solid #eef5f6;font-size:13px;
-  }
+  .modal-summary-row{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid #eef5f6;font-size:13px}
   .modal-summary-row:last-child{border-bottom:none}
   .spct{font-weight:700;color:var(--green)}
-  .btn-close-modal{
-    width:100%;
-    margin-top:16px;
-    border:none;
-    border-radius:10px;
-    padding:12px;
-    cursor:pointer;
-    color:#fff;
-    font-weight:600;
-    background:linear-gradient(135deg,var(--teal),var(--green));
-  }
-
-  @media(max-width:900px){
-    .target-unit-row{flex-direction:column;align-items:stretch}
-    .checkbox-grid{grid-template-columns:1fr}
-  }
-  @media(max-width:700px){
-    main{padding:14px}
-    .form-card{padding:18px 16px}
-    .step-nav-btns{gap:10px;flex-direction:column}
-    .btn-prev,.btn-next,.btn-complete{width:100%}
-  }
+  .btn-close-modal{width:100%;margin-top:16px;border:none;border-radius:10px;padding:12px;cursor:pointer;color:#fff;font-weight:600;background:linear-gradient(135deg,var(--teal),var(--green))}
+  @media(max-width:900px){.target-unit-row{flex-direction:column;align-items:stretch}.checkbox-grid{grid-template-columns:1fr}}
+  @media(max-width:700px){main{padding:14px}.form-card{padding:18px 16px}.step-nav-btns{gap:10px;flex-direction:column}.btn-prev,.btn-next,.btn-complete{width:100%}}
 </style>
 </head>
 <body>
@@ -714,10 +254,9 @@
     </button>
     <div>
       <div class="brand-name">CompetencyPath</div>
-      <div class="brand-sub">Online Competency Course Designer - BY DR. MICHAEL ADELANI ADEWUSI FOR KAMPALA INTERNATIONAL UNIVERSITY, UGANDA</div>
+      <div class="brand-sub">Online Competency Course Designer · BY DR. MICHAEL ADELANI ADEWUSI FOR KAMPALA INTERNATIONAL UNIVERSITY, UGANDA</div>
     </div>
   </div>
-
   <div class="hdr-right">
     <button class="btn-header" id="openImportBtn">✦ Import Write-up</button>
     <div class="hdr-unit-info" id="headerRight">
@@ -744,7 +283,6 @@
       <div class="sidebar-units">
         <div class="sec-label">Course Units</div>
         <div id="unitsList"></div>
-
         <div class="add-unit-form" id="addUnitForm">
           <input class="add-unit-input" id="newUnitInput" placeholder="e.g. Unit 2: Data Analysis"/>
           <div class="add-unit-btns">
@@ -752,13 +290,11 @@
             <button class="btn-cancel" id="cancelAddUnit">Cancel</button>
           </div>
         </div>
-
         <div class="unit-tools">
           <button class="btn-add-unit" id="showAddUnitBtn">+ Add Course Unit</button>
           <button class="btn-download-unit" id="downloadUnitBtn">⬇ Download Unit HTML</button>
         </div>
       </div>
-
       <div class="sidebar-steps">
         <div class="sec-label">Design Steps</div>
         <div id="stepsList"></div>
@@ -777,6 +313,7 @@
   </main>
 </div>
 
+<!-- Import Modal -->
 <div class="modal-backdrop" id="importModal">
   <div class="modal">
     <div class="modal-head">
@@ -784,38 +321,27 @@
       <h2>✦ Course Import</h2>
       <p>Paste or upload your course write-up and generate a competency-based design.</p>
     </div>
-
     <div class="modal-body">
       <div class="import-tabs">
         <button class="import-tab active" data-tab="paste">📋 Paste Text</button>
         <button class="import-tab" data-tab="upload">📁 Upload File</button>
         <button class="import-tab" data-tab="tips">💡 Tips</button>
       </div>
-
       <div id="tab-paste">
-        <div class="hint-box">
-          <strong>Tip:</strong> include your course title, target learners, objectives, existing topics, content outline, assessments, schedule, and delivery format.
-        </div>
-        <textarea class="import-textarea" id="writeupInput" placeholder="Paste your course/unit write-up here..."></textarea>
+        <div class="hint-box"><strong>Tip:</strong> include course title, target learners, objectives, existing topics, content outline, assessments, schedule, and delivery format.</div>
+        <textarea class="import-textarea" id="writeupInput" placeholder="Paste your course/unit write-up here…"></textarea>
         <div class="char-count"><span id="charCount">0</span> characters</div>
       </div>
-
       <div id="tab-upload" style="display:none">
-        <div class="hint-box">
-          <strong>Supported:</strong> .txt, .md, .csv, .html, .json<br>
-          Uploaded text will be combined with pasted text.
-        </div>
-
+        <div class="hint-box"><strong>Supported:</strong> .txt, .md, .csv, .html, .json<br>Uploaded text will be combined with pasted text.</div>
         <div class="file-box" id="fileBox">
           <p style="font-weight:700;color:var(--teal);margin-bottom:6px">Upload a text-based course file</p>
           <p style="font-size:13px;color:var(--text-muted);margin-bottom:10px">Drag and drop a file here, or choose one.</p>
           <button class="btn-prev" type="button" id="chooseFileBtn">Choose File</button>
           <input type="file" id="fileInput" accept=".txt,.md,.csv,.html,.json" hidden />
         </div>
-
         <div class="file-meta" id="fileMeta"></div>
       </div>
-
       <div id="tab-tips" style="display:none">
         <div style="display:flex;flex-direction:column;gap:12px">
           <div class="hint-box"><strong>📌 Include course title and topic</strong><br>Example: Unit 3: Introduction to Financial Reporting</div>
@@ -823,34 +349,32 @@
           <div class="hint-box"><strong>📚 Add existing content outline</strong><br>Topics, lessons, modules, syllabus points, readings, practical areas</div>
           <div class="hint-box"><strong>⏱ Add realistic time information</strong><br>Include notional hours or duration if you have them</div>
           <div class="hint-box"><strong>📝 Add engagement activities</strong><br>Case studies, discussions, practicals, projects, simulations, reflections</div>
+          <div class="hint-box"><strong>🎯 Include assessment details</strong><br>Existing tests, projects, mastery levels, grading criteria</div>
         </div>
       </div>
-
       <div class="target-unit-row">
         <label>Apply to unit:</label>
         <select class="target-unit-select" id="targetUnitSelect"></select>
       </div>
-
       <button class="btn-generate" id="generateBtn">✦ Generate Competency Design</button>
-
       <div class="ai-status" id="aiStatus">
         <div class="spinner"></div>
-        <div id="aiStatusText">Analysing your write-up...</div>
+        <div id="aiStatusText">Analysing your write-up…</div>
       </div>
-
       <ul class="gen-steps" id="genStepsList">
         <li class="gen-step" id="gs1"><span class="gs-icon">⏳</span> Reading and extracting content</li>
         <li class="gen-step" id="gs2"><span class="gs-icon">⏳</span> Identifying competency gaps</li>
         <li class="gen-step" id="gs3"><span class="gs-icon">⏳</span> Mapping knowledge and skills</li>
-        <li class="gen-step" id="gs4"><span class="gs-icon">⏳</span> Defining SMART objectives</li>
-        <li class="gen-step" id="gs5"><span class="gs-icon">⏳</span> Building course content and notional hours</li>
-        <li class="gen-step" id="gs6"><span class="gs-icon">⏳</span> Structuring assessments and activities</li>
-        <li class="gen-step" id="gs7"><span class="gs-icon">⏳</span> Populating all 9 design steps</li>
+        <li class="gen-step" id="gs4"><span class="gs-icon">⏳</span> Defining SMART objectives with performance indicators</li>
+        <li class="gen-step" id="gs5"><span class="gs-icon">⏳</span> Building content plan and notional hours</li>
+        <li class="gen-step" id="gs6"><span class="gs-icon">⏳</span> Designing assessments with alignment matrix</li>
+        <li class="gen-step" id="gs7"><span class="gs-icon">⏳</span> Populating flexible paths and feedback loops</li>
       </ul>
     </div>
   </div>
 </div>
 
+<!-- Complete Modal -->
 <div class="modal-backdrop" id="completeModal">
   <div class="complete-modal">
     <h2>🎉 Unit Design Complete!</h2>
@@ -861,82 +385,150 @@
 </div>
 
 <script>
+// ─────────────────────────────────────────────────────────────────
+// STEPS DEFINITION  (with improvements for Steps 3, 5, 8)
+// ─────────────────────────────────────────────────────────────────
 const STEPS = [
   { id:1, title:"Conduct a Competency Gap Analysis", icon:"🔍", color:"#0d7d8c",
     fields:[
-      {key:"currentState",label:"Current Competency State",type:"textarea",placeholder:"Describe the current skill/knowledge level of learners…"},
-      {key:"desiredState",label:"Desired Competency State",type:"textarea",placeholder:"Describe the target competency after course completion…"},
-      {key:"gaps",label:"Identified Gaps",type:"textarea",placeholder:"List the specific gaps between current and desired states…"},
-      {key:"priority",label:"Priority Level",type:"select",options:["Critical","High","Medium","Low"]}
+      {key:"currentState", label:"Current Competency State", type:"textarea",
+       placeholder:"Describe the current skill/knowledge level of learners on course entry…"},
+      {key:"desiredState", label:"Desired Competency State", type:"textarea",
+       placeholder:"Describe the specific competency state learners should reach by course completion…"},
+      {key:"gaps", label:"Identified Gaps", type:"textarea",
+       placeholder:"List the specific knowledge, skill, or attitude gaps between current and desired states…"},
+      {key:"priority", label:"Priority Level", type:"select",
+       options:["Critical","High","Medium","Low"]}
     ]
   },
   { id:2, title:"Map Knowledge and Skills to Competencies", icon:"🗺️", color:"#1a9baf",
     fields:[
-      {key:"competencies",label:"Core Competencies",type:"tags",placeholder:"Add competency and press Enter…"},
-      {key:"knowledgeAreas",label:"Knowledge Areas Required",type:"textarea",placeholder:"List declarative and procedural knowledge needed…"},
-      {key:"skills",label:"Skills to Develop",type:"tags",placeholder:"Add skill and press Enter…"},
-      {key:"mappingNotes",label:"Mapping Notes",type:"textarea",placeholder:"Additional notes on knowledge–skill–competency alignment…"}
+      {key:"competencies", label:"Core Competencies", type:"tags",
+       placeholder:"Add competency and press Enter…"},
+      {key:"knowledgeAreas", label:"Knowledge Areas Required", type:"textarea",
+       placeholder:"List declarative knowledge (concepts, theories) AND procedural knowledge (how-to, processes) needed…"},
+      {key:"skills", label:"Skills to Develop", type:"tags",
+       placeholder:"Add observable skill and press Enter…"},
+      {key:"mappingNotes", label:"Mapping Notes", type:"textarea",
+       placeholder:"Explain how each knowledge area maps to a competency and how skills operationalise competency…"}
     ]
   },
   { id:3, title:"Define SMART Learning Objectives", icon:"🎯", color:"#27ae87",
+    evaluatorNote:"Objectives must use observable action verbs. Measurable must state performance indicators (scores, rubric levels, demonstrations) — not activities. Achievable must address learner capability, not tools or resources.",
     fields:[
-      {key:"specific",label:"Specific – What exactly will learners achieve?",type:"textarea",placeholder:"What exactly should learners be able to do?"},
-      {key:"measurable",label:"Measurable – How will achievement be measured?",type:"textarea",placeholder:"How will mastery be measured?"},
-      {key:"achievable",label:"Achievable – Is this realistic for the audience?",type:"textarea",placeholder:"Why is this realistic?"},
-      {key:"relevant",label:"Relevant – Why does this matter?",type:"textarea",placeholder:"Why is it relevant to their context?"},
-      {key:"timeBound",label:"Time-bound – Within what timeframe?",type:"text",placeholder:"e.g. By the end of Week 3"}
+      {key:"specific", label:"Specific – What exactly will learners achieve?", type:"textarea",
+       placeholder:"State precisely what learners will be able to DO upon completion. Use observable, action-based, bounded language…"},
+      {key:"measurable", label:"Measurable – Performance Indicators (NOT activities)", type:"textarea",
+       hint:"State how mastery will be measured using performance evidence, not task completion. E.g.: 'Score ≥75% on the module assessment', 'Correctly classify 8 of 10 case studies', 'Demonstrate X skill in a live practical with no prompting'.",
+       placeholder:"E.g.: Learners will score ≥75% on the summative assessment; OR correctly complete 8 of 10 case analysis tasks…"},
+      {key:"achievable", label:"Achievable – Learner Capability Assessment", type:"textarea",
+       hint:"Explain why these objectives are within learners' reach. Reference prior knowledge, available scaffolding, cognitive load, and course duration — NOT resources or tools.",
+       placeholder:"E.g.: Learners entering with introductory-level background will be scaffolded through worked examples and practice sets before being assessed independently…"},
+      {key:"relevant", label:"Relevant – Why does this matter?", type:"textarea",
+       placeholder:"Connect objectives to learners' professional roles, career progression, or real-world practice…"},
+      {key:"timeBound", label:"Time-bound – By when?", type:"text",
+       placeholder:"e.g. By the end of Week 3 / Within the 6-week course"},
+      {key:"completeObjectives", label:"Complete SMART Objectives (one per line)", type:"textarea",
+       hint:"Write 3–5 complete SMART objectives as action statements. Format: 'By [deadline], learners will be able to [action verb] [specific outcome] as demonstrated by [performance evidence].'",
+       placeholder:"By the end of Week 2, learners will be able to analyse a balance sheet and identify three liquidity ratios with ≥80% accuracy on the case-based assignment.\nBy the end of Week 4, learners will be able to construct a profit and loss statement without prompting, achieving Proficient level on the marking rubric."}
     ]
   },
   { id:4, title:"Plan Course Content, Notional Hours and Engagement Activities", icon:"🧩", color:"#1abc9c",
     fields:[
-      {key:"contentOverview",label:"Course Content Overview",type:"textarea",placeholder:"Provide the overall sequence of topics, units or modules to be taught…"},
-      {key:"topicPlans",label:"Topic-by-Topic Content Plan",type:"topicTable"},
-      {key:"contentRationale",label:"Rationale for Sequencing and Hours",type:"textarea",placeholder:"Explain why the topics are arranged this way and why the notional hours are realistic…"}
+      {key:"contentOverview", label:"Course Content Overview", type:"textarea",
+       placeholder:"Describe the overall sequence of topics and the pedagogical logic for their ordering…"},
+      {key:"topicPlans", label:"Topic-by-Topic Content Plan", type:"topicTable"},
+      {key:"contentRationale", label:"Rationale for Sequencing and Hours", type:"textarea",
+       placeholder:"Justify the topic sequence (e.g. prerequisite logic, Bloom's taxonomy progression) and notional hour allocations…"}
     ]
   },
   { id:5, title:"Develop Evidence-based Assessments", icon:"📋", color:"#2ecc71",
+    evaluatorNote:"Rubric criteria must include 4 performance levels. Each assessment must be explicitly linked to the competency it measures. Mastery threshold must be justified — not just stated.",
     fields:[
-      {key:"formative",label:"Formative Assessments",type:"textarea",placeholder:"Quizzes, reflections, peer feedback…"},
-      {key:"summative",label:"Summative Assessments",type:"textarea",placeholder:"Projects, exams, presentations…"},
-      {key:"rubric",label:"Assessment Rubric / Criteria",type:"textarea",placeholder:"Describe criteria and performance levels…"},
-      {key:"evidenceType",label:"Types of Evidence Collected",type:"tags",placeholder:"Add evidence type and press Enter…"},
-      {key:"passingCriteria",label:"Passing / Mastery Criteria",type:"text",placeholder:"e.g. 75% or successful demonstration"}
+      {key:"formative", label:"Formative Assessments", type:"textarea",
+       placeholder:"Specific formative assessments with frequency and purpose (e.g. weekly quizzes measuring recall; peer critique measuring application)…"},
+      {key:"summative", label:"Summative Assessments", type:"textarea",
+       placeholder:"Specific summative assessments with weightings and competencies assessed (e.g. 40% case project → Competency 3; 60% written exam → Competencies 1, 2, 4)…"},
+      {key:"rubric", label:"Assessment Rubric / Criteria", type:"textarea",
+       hint:"Include 4 performance levels for each criterion: Excellent / Proficient / Developing / Beginning. Each level must have a concrete descriptor.",
+       placeholder:"Criterion 1 – Analysis\n  Excellent: Identifies all key issues with precise evidence and nuanced interpretation\n  Proficient: Identifies main issues with supporting evidence\n  Developing: Identifies some issues but evidence is limited or generic\n  Beginning: Fails to identify key issues or lacks supporting evidence\n\nCriterion 2 – Application…"},
+      {key:"evidenceType", label:"Types of Evidence Collected", type:"tags",
+       placeholder:"Add evidence type and press Enter…"},
+      {key:"passingCriteria", label:"Passing / Mastery Criteria", type:"text",
+       placeholder:"e.g. ≥75% overall with no criterion below Developing level"},
+      {key:"competencyAlignment", label:"Competency-to-Assessment Alignment Matrix", type:"textarea",
+       hint:"Explicitly map each assessment to the competency it measures. This ensures every competency is assessed and no assessment is redundant.",
+       placeholder:"Quiz 1 → Competency 1: Define and distinguish key financial terms\nCase Project A → Competency 3: Apply ratio analysis to real organisational data\nPeer Review Exercise → Competency 2: Evaluate others' analytical reasoning\nFinal Written Exam → Competencies 1, 2, 4: Integrate concepts across all core areas"},
+      {key:"masteryJustification", label:"Mastery Threshold Justification", type:"textarea",
+       hint:"Provide an evidence-based rationale for the chosen mastery threshold. Possible sources: institutional policy, industry minimum competency standards, domain risk level, or published CBE research.",
+       placeholder:"The 75% mastery threshold is set because: (1) KIU assessment policy requires a minimum of 70% for course credit; (2) industry entry-level standards require reliable independent performance on core tasks; (3) this threshold reflects sufficient competency to progress to Unit 2 safely without remediation. Learners below 75% will be directed to targeted remedial resources before re-attempt."}
     ]
   },
   { id:6, title:"Select Appropriate Delivery Methods", icon:"🚀", color:"#16a085",
     fields:[
-      {key:"modality",label:"Learning Modality",type:"select",options:["Fully Online","Blended / Hybrid","Face-to-Face","Self-paced","Synchronous Virtual"]},
-      {key:"tools",label:"Tools & Platforms",type:"tags",placeholder:"Add platform/tool and press Enter…"},
-      {key:"contentFormats",label:"Content Formats",type:"checkboxes",options:["Video Lectures","Reading Materials","Interactive Simulations","Case Studies","Podcasts","Infographics","Live Webinars","Discussion Forums"]},
-      {key:"accessibilityNotes",label:"Accessibility Considerations",type:"textarea",placeholder:"How will learning be accessible to all learners?"}
+      {key:"modality", label:"Learning Modality", type:"select",
+       options:["Fully Online","Blended / Hybrid","Face-to-Face","Self-paced","Synchronous Virtual"]},
+      {key:"tools", label:"Tools & Platforms", type:"tags",
+       placeholder:"Add platform/tool and press Enter…"},
+      {key:"contentFormats", label:"Content Formats", type:"checkboxes",
+       options:["Video Lectures","Reading Materials","Interactive Simulations","Case Studies","Podcasts","Infographics","Live Webinars","Discussion Forums"]},
+      {key:"accessibilityNotes", label:"Accessibility Considerations", type:"textarea",
+       placeholder:"Specific accessibility provisions: captioning, screen-reader compatibility, alternative formats, low-bandwidth options…"}
     ]
   },
   { id:7, title:"Design Engaging Learning Activities", icon:"⚡", color:"#5dade2",
     fields:[
-      {key:"activities",label:"Core Learning Activities",type:"textarea",placeholder:"Describe the main activities learners will engage in…"},
-      {key:"collaboration",label:"Collaborative Elements",type:"textarea",placeholder:"Group work, peer discussion, team tasks…"},
-      {key:"gamification",label:"Gamification / Engagement Strategies",type:"textarea",placeholder:"Badges, challenges, points, milestones…"},
-      {key:"realWorld",label:"Real-world Application Scenarios",type:"textarea",placeholder:"How will learners apply this in real contexts?"}
+      {key:"activities", label:"Core Learning Activities", type:"textarea",
+       placeholder:"Specific, named activities with clear learning purpose and link to competencies (e.g. 'Ratio analysis workshop — learners apply 5 ratios to a provided set of company accounts, mapping findings to Competency 3')…"},
+      {key:"collaboration", label:"Collaborative Elements", type:"textarea",
+       placeholder:"Specific collaborative tasks: group sizes, roles, how collaboration builds competency (e.g. structured peer critique protocol)…"},
+      {key:"gamification", label:"Gamification / Engagement Strategies", type:"textarea",
+       placeholder:"Specific mechanics: competency milestone badges, leaderboards, progress-gate unlocks — with educational rationale for each…"},
+      {key:"realWorld", label:"Real-world Application Scenarios", type:"textarea",
+       placeholder:"Specific industry contexts, case organisations, simulated professional tasks learners will engage with…"}
     ]
   },
   { id:8, title:"Facilitate Flexible Learning Paths", icon:"🔀", color:"#af7ac5",
+    evaluatorNote:"Paths must describe within-course branching, not post-course options. Include self-paced progression, competency-based unlocking, and a concrete RPL/challenge exam provision.",
     fields:[
-      {key:"prerequisites",label:"Prerequisites / Entry Points",type:"textarea",placeholder:"What should learners know before starting?"},
-      {key:"paths",label:"Alternative Learning Paths",type:"textarea",placeholder:"How can learners move through content based on readiness?"},
-      {key:"optionalContent",label:"Optional / Enrichment Content",type:"textarea",placeholder:"Resources for advanced learners…"},
-      {key:"adaptations",label:"Adaptations for Different Learners",type:"textarea",placeholder:"Differentiation, accommodations, flexible pacing…"}
+      {key:"prerequisites", label:"Prerequisites / Entry Points", type:"textarea",
+       placeholder:"Specific prerequisite knowledge or qualifications with a suggested diagnostic tool or self-assessment learners complete before starting…"},
+      {key:"paths", label:"Within-Course Flexible Progression", type:"textarea",
+       hint:"Describe branching routes INSIDE the course based on readiness checks or diagnostic results — not post-course options. E.g. fast-track for advanced learners, foundational scaffolded path for those needing support.",
+       placeholder:"Learners who score ≥85% on the diagnostic pre-test may skip the foundational module and proceed directly to applied case work (fast-track path). Learners who score below 60% are routed through supplementary readings and scaffolded exercises before attempting the core module (foundational path)…"},
+      {key:"selfPacedProgression", label:"Self-paced Progression Mechanism", type:"textarea",
+       hint:"Describe how learners can control their pace within the course structure, including minimum engagement windows and maximum timeline.",
+       placeholder:"Each module is available from the published start date and remains open for the duration of the course. Learners may complete modules ahead of schedule but must meet the gate-quiz minimum before unlocking the next. A maximum completion timeline of 10 weeks applies; learners with approved extensions may take up to 14 weeks…"},
+      {key:"competencyUnlocking", label:"Competency-based Unlocking / Branching", type:"textarea",
+       hint:"Describe how demonstrating competency in one module gates access to the next. Include re-attempt policy and remedial provision.",
+       placeholder:"Module 2 unlocks only after the learner passes the Module 1 gate quiz with ≥70%. Learners who do not meet the gate score are directed to a targeted 2-hour remedial micro-module and may re-attempt once. A second failure triggers an instructor check-in to diagnose the barrier before a final attempt is permitted…"},
+      {key:"optionalContent", label:"Optional / Enrichment Content", type:"textarea",
+       placeholder:"Resources for advanced learners: extended readings, research projects, industry certifications, competency extension challenges…"},
+      {key:"adaptations", label:"Adaptations for Different Learners", type:"textarea",
+       placeholder:"Differentiation strategies: extended time, reduced-workload equivalents, alternative assessment formats, language support, assistive technology provision…"},
+      {key:"rplProvision", label:"RPL & Challenge Exam Provision", type:"textarea",
+       hint:"Describe the Recognition of Prior Learning (RPL) process and challenge exam for learners who may already hold the competencies.",
+       placeholder:"Learners with relevant prior work experience or qualifications may apply for RPL by submitting a portfolio of evidence demonstrating each of the 4 core competencies. The RPL portfolio is assessed by two instructors against the rubric criteria. Alternatively, learners may sit a challenge exam covering all module content. A score of ≥80% on the challenge exam exempts the learner from core modules while retaining access to enrichment content. Maximum RPL credit: 3 of 4 modules."}
     ]
   },
   { id:9, title:"Integrate Continuous Feedback", icon:"🔄", color:"#82c341",
     fields:[
-      {key:"feedbackMechanisms",label:"Feedback Mechanisms",type:"checkboxes",options:["Automated Quiz Feedback","Instructor Comments","Peer Review","Self-Assessment","Learning Analytics","End-of-Unit Surveys","1-on-1 Check-ins"]},
-      {key:"feedbackSchedule",label:"Feedback Schedule",type:"textarea",placeholder:"When and how often will feedback be provided?"},
-      {key:"improvementLoop",label:"Continuous Improvement Process",type:"textarea",placeholder:"How will feedback inform revisions?"},
-      {key:"successMetrics",label:"Success Metrics",type:"tags",placeholder:"Add metric and press Enter…"}
+      {key:"feedbackMechanisms", label:"Feedback Mechanisms", type:"checkboxes",
+       options:["Automated Quiz Feedback","Instructor Comments","Peer Review","Self-Assessment","Learning Analytics","End-of-Unit Surveys","1-on-1 Check-ins"]},
+      {key:"feedbackSchedule", label:"Feedback Schedule", type:"textarea",
+       placeholder:"Specific feedback timeline: when formative feedback is given, turnaround time for written feedback, schedule for instructor check-ins…"},
+      {key:"improvementLoop", label:"Continuous Improvement Process", type:"textarea",
+       placeholder:"Concrete process for using feedback data to revise course content, pacing, or support — include trigger, who acts, and timeline…"},
+      {key:"successMetrics", label:"Success Metrics (with baselines and targets)", type:"tags",
+       hint:"Every metric must include a baseline and a target. E.g. 'Completion rate: baseline 0%, target ≥80%'.",
+       placeholder:"Add metric with baseline and target, then press Enter…"}
     ]
   }
 ];
 
+// ─────────────────────────────────────────────────────────────────
+// STATE & HELPERS
+// ─────────────────────────────────────────────────────────────────
 function emptyTopicPlanRow(){
   return { topic:"", keyContent:"", notionalHours:"", engagementActivity:"" };
 }
@@ -955,7 +547,7 @@ function defaultData(){
 }
 
 let state = {
-  units:[{id:1,name:"Unit 1: Introduction",data:defaultData(),aiGenerated:false}],
+  units:[{id:1, name:"Unit 1: Introduction", description:"", data:defaultData(), aiGenerated:false}],
   activeUnit:1,
   activeStep:1,
   sidebarOpen:true
@@ -974,75 +566,56 @@ function escHtml(s){
     .replace(/"/g,'&quot;');
 }
 
-function ringOffset(pct, r = 17){
-  return 2 * Math.PI * r * (1 - pct / 100);
-}
+function ringOffset(pct, r=17){ return 2*Math.PI*r*(1-pct/100); }
 
 function getCompletion(unit, stepId){
-  const step = STEPS.find(s => s.id === stepId);
+  const step = STEPS.find(s=>s.id===stepId);
   const data = unit.data[stepId] || {};
-  let filled = 0;
+  let filled=0;
   const total = step.fields.length;
-
   step.fields.forEach(field=>{
     const v = data[field.key];
     if(Array.isArray(v)){
-      if(field.type === 'topicTable'){
-        const validRows = v.filter(row =>
-          row && (String(row.topic || '').trim() ||
-          String(row.keyContent || '').trim() ||
-          String(row.notionalHours || '').trim() ||
-          String(row.engagementActivity || '').trim())
-        );
-        if(validRows.length > 0) filled++;
-      } else if(v.length > 0){
-        filled++;
-      }
-    } else if(v && String(v).trim()){
-      filled++;
-    }
+      if(field.type==='topicTable'){
+        const validRows = v.filter(row=> row&&(String(row.topic||'').trim()||String(row.keyContent||'').trim()||String(row.notionalHours||'').trim()||String(row.engagementActivity||'').trim()));
+        if(validRows.length>0) filled++;
+      } else if(v.length>0){ filled++; }
+    } else if(v&&String(v).trim()){ filled++; }
   });
-
-  return total ? Math.round((filled / total) * 100) : 0;
+  return total ? Math.round((filled/total)*100) : 0;
 }
 
 function getTotalProgress(unit){
-  return Math.round(STEPS.reduce((acc, step)=>acc + getCompletion(unit, step.id), 0) / STEPS.length);
+  return Math.round(STEPS.reduce((acc,step)=>acc+getCompletion(unit,step.id),0)/STEPS.length);
 }
 
-function normalizeArray(v){
-  return Array.isArray(v) ? v.filter(Boolean) : [];
-}
-
-function normalizeSubset(v, allowed){
-  return Array.isArray(v) ? v.filter(item => allowed.includes(item)) : [];
-}
-
+function normalizeArray(v){ return Array.isArray(v)?v.filter(Boolean):[]; }
+function normalizeSubset(v,allowed){ return Array.isArray(v)?v.filter(item=>allowed.includes(item)):[]; }
 function normalizeTopicPlans(v){
   if(!Array.isArray(v)) return [];
-  return v
-    .map(row => ({
-      topic: String(row?.topic || '').trim(),
-      keyContent: String(row?.keyContent || '').trim(),
-      notionalHours: String(row?.notionalHours || '').trim(),
-      engagementActivity: String(row?.engagementActivity || '').trim()
-    }))
-    .filter(row => row.topic || row.keyContent || row.notionalHours || row.engagementActivity);
+  return v.map(row=>({
+    topic:String(row?.topic||'').trim(),
+    keyContent:String(row?.keyContent||'').trim(),
+    notionalHours:String(row?.notionalHours||'').trim(),
+    engagementActivity:String(row?.engagementActivity||'').trim()
+  })).filter(row=>row.topic||row.keyContent||row.notionalHours||row.engagementActivity);
 }
 
+// ─────────────────────────────────────────────────────────────────
+// FILE UPLOAD
+// ─────────────────────────────────────────────────────────────────
 async function handleSelectedFile(file){
   const meta = document.getElementById('fileMeta');
   try{
     const text = await file.text();
     uploadedFileText = text.trim();
     uploadedFileName = file.name;
-    meta.style.display = 'block';
-    meta.innerHTML = `<strong>Loaded:</strong> ${escHtml(file.name)}<br><strong>Characters:</strong> ${uploadedFileText.length.toLocaleString()}`;
+    meta.style.display='block';
+    meta.innerHTML=`<strong>Loaded:</strong> ${escHtml(file.name)}<br><strong>Characters:</strong> ${uploadedFileText.length.toLocaleString()}`;
   }catch(err){
-    uploadedFileText = '';
-    uploadedFileName = '';
-    meta.style.display = 'block';
-    meta.innerHTML = `<span style="color:#a02020"><strong>Error:</strong> ${escHtml(err.message)}</span>`;
+    uploadedFileText=''; uploadedFileName='';
+    meta.style.display='block';
+    meta.innerHTML=`<span style="color:#a02020"><strong>Error:</strong> ${escHtml(err.message)}</span>`;
   }
 }
 
@@ -1054,69 +627,60 @@ function buildCombinedInput(){
   return blocks.join('\n\n====================\n\n').trim();
 }
 
+// ─────────────────────────────────────────────────────────────────
+// RENDER FUNCTIONS
+// ─────────────────────────────────────────────────────────────────
 function renderUnits(){
   const container = document.getElementById('unitsList');
-  container.innerHTML = '';
+  container.innerHTML='';
   state.units.forEach(unit=>{
     const prog = getTotalProgress(unit);
-    const active = unit.id === state.activeUnit;
+    const active = unit.id===state.activeUnit;
     const card = document.createElement('div');
-    card.className = 'unit-card' + (active ? ' active' : '');
-    card.innerHTML = `
+    card.className = 'unit-card'+(active?' active':'');
+    card.innerHTML=`
       <div class="unit-card-row">
         <span class="unit-name">${escHtml(unit.name)}${unit.aiGenerated?'<span style="font-size:10px;color:#82c341;margin-left:4px">✦</span>':''}</span>
         <svg class="ring-svg" width="34" height="34">
           <circle cx="17" cy="17" r="12" fill="none" stroke="#e0f0f3" stroke-width="3"/>
-          <circle cx="17" cy="17" r="12" fill="none" stroke="${active ? '#27ae87' : '#aaa'}" stroke-width="3"
-            stroke-dasharray="${(2 * Math.PI * 12).toFixed(1)}"
-            stroke-dashoffset="${(2 * Math.PI * 12 * (1 - prog / 100)).toFixed(1)}"
+          <circle cx="17" cy="17" r="12" fill="none" stroke="${active?'#27ae87':'#aaa'}" stroke-width="3"
+            stroke-dasharray="${(2*Math.PI*12).toFixed(1)}"
+            stroke-dashoffset="${(2*Math.PI*12*(1-prog/100)).toFixed(1)}"
             stroke-linecap="round"/>
           <text x="17" y="17" text-anchor="middle" dominant-baseline="middle"
-            style="font-size:6.5px;font-weight:700;fill:${active ? '#27ae87' : '#aaa'};font-family:sans-serif;transform:rotate(90deg);transform-origin:center">${prog}%</text>
+            style="font-size:6.5px;font-weight:700;fill:${active?'#27ae87':'#aaa'};font-family:sans-serif;transform:rotate(90deg);transform-origin:center">${prog}%</text>
         </svg>
       </div>
+      ${unit.description?`<div class="unit-desc-preview">${escHtml(unit.description)}</div>`:''}
       <div class="unit-bar"><div class="unit-bar-fill" style="width:${prog}%"></div></div>
     `;
-    card.addEventListener('click',()=>{
-      state.activeUnit = unit.id;
-      state.activeStep = 1;
-      render();
-    });
+    card.addEventListener('click',()=>{ state.activeUnit=unit.id; state.activeStep=1; render(); });
     container.appendChild(card);
   });
 }
 
 function renderSteps(){
   const container = document.getElementById('stepsList');
-  container.innerHTML = '';
+  container.innerHTML='';
   const unit = getUnit();
   if(!unit) return;
-
   STEPS.forEach(step=>{
-    const pct = getCompletion(unit, step.id);
-    const active = step.id === state.activeStep;
-    const done = pct === 100;
-
+    const pct = getCompletion(unit,step.id);
+    const active = step.id===state.activeStep;
     const item = document.createElement('div');
-    item.className = 'step-nav-item' + (active ? ' active' : '');
-    item.style.borderColor = active ? step.color : 'transparent';
-    item.style.background = active ? `${step.color}18` : '';
-
-    item.innerHTML = `
-      <div class="step-dot" style="border-color:${done || active ? step.color : '#d8eaed'};background:${done ? step.color : active ? step.color + '22' : '#f0f4f5'}">
-        ${done ? `<span style="color:#fff;font-size:10px;font-weight:700">✓</span>` : `<span>${step.icon}</span>`}
+    item.className='step-nav-item'+(active?` style="background:${step.color}15;border-color:${step.color}44"`:'');
+    if(active) item.style.cssText=`background:${step.color}15;border-color:${step.color}44`;
+    item.innerHTML=`
+      <div class="step-dot" style="${active?`background:${step.color};border-color:${step.color};color:#fff`:''}">
+        ${pct===100?'✓':step.icon}
       </div>
       <div class="step-nav-text">
         <div class="step-nav-num">STEP ${String(step.id).padStart(2,'0')}</div>
-        <div class="step-nav-title" style="color:${active ? step.color : '#4a7080'}">${step.title}</div>
+        <div class="step-nav-title" style="color:${active?step.color:'#4a7080'}">${step.title}</div>
         <div class="step-mini-bar"><div class="step-mini-fill" style="width:${pct}%;background:${step.color}"></div></div>
       </div>
     `;
-    item.addEventListener('click',()=>{
-      state.activeStep = step.id;
-      renderContent();
-      renderSteps();
-    });
+    item.addEventListener('click',()=>{ state.activeStep=step.id; renderContent(); renderSteps(); });
     container.appendChild(item);
   });
 }
@@ -1124,393 +688,347 @@ function renderSteps(){
 function renderHeaderRing(){
   const unit = getUnit();
   const right = document.getElementById('headerRight');
-  if(!unit){
-    right.style.display = 'none';
-    return;
-  }
-  right.style.display = 'flex';
+  if(!unit){ right.style.display='none'; return; }
+  right.style.display='flex';
   document.getElementById('headerUnitName').textContent = unit.name;
   const pct = getTotalProgress(unit);
-  document.getElementById('headerRingFill').setAttribute('stroke-dashoffset', ringOffset(pct, 17).toFixed(1));
-  document.getElementById('headerRingTxt').textContent = pct + '%';
+  document.getElementById('headerRingFill').setAttribute('stroke-dashoffset', ringOffset(pct,17).toFixed(1));
+  document.getElementById('headerRingTxt').textContent = pct+'%';
 }
 
+// ─────────────────────────────────────────────────────────────────
+// TOPIC TABLE BUILDER
+// ─────────────────────────────────────────────────────────────────
 function buildTopicTableField(value, onChange){
-  let rows = Array.isArray(value) ? value.map(r => ({...emptyTopicPlanRow(), ...r})) : [];
-  if(!rows.length) rows = [emptyTopicPlanRow()];
+  let rows = Array.isArray(value)?value.map(r=>({...emptyTopicPlanRow(),...r})):[];
+  if(!rows.length) rows=[emptyTopicPlanRow()];
 
   const wrap = document.createElement('div');
-  wrap.className = 'topic-table-wrap';
-
+  wrap.className='topic-table-wrap';
   const tools = document.createElement('div');
-  tools.className = 'topic-table-tools';
-  tools.innerHTML = `
-    <div class="topic-table-note">Add the topics to be taught, realistic notional hours, key content, and engagement activities.</div>
+  tools.className='topic-table-tools';
+  tools.innerHTML=`
+    <div class="topic-table-note">Add topics, realistic notional hours, key content, and engagement activities.</div>
     <button type="button" class="btn-small btn-add-row">+ Add Topic Row</button>
   `;
   wrap.appendChild(tools);
-
   const tableScroll = document.createElement('div');
-  tableScroll.className = 'topic-table-scroll';
+  tableScroll.className='topic-table-scroll';
   wrap.appendChild(tableScroll);
-
   const totalBox = document.createElement('div');
-  totalBox.className = 'topic-hours-total';
+  totalBox.className='topic-hours-total';
   wrap.appendChild(totalBox);
 
-  function getTotalHours(rows){
-    return rows.reduce((sum,row)=>{
-      const n = parseFloat(String(row.notionalHours || '').replace(/[^0-9.]/g,''));
-      return sum + (isNaN(n) ? 0 : n);
-    },0);
-  }
-
-  function sync(){
-    onChange(rows.map(r=>({...r})));
-    renderTable();
-  }
+  function getTotalHours(rows){ return rows.reduce((sum,row)=>{ const n=parseFloat(String(row.notionalHours||'').replace(/[^0-9.]/g,'')); return sum+(isNaN(n)?0:n); },0); }
+  function sync(){ onChange(rows.map(r=>({...r}))); renderTable(); }
+  function updateTotalOnly(){ totalBox.textContent=`Total notional hours: ${getTotalHours(rows)}`; }
 
   function renderTable(){
-    tableScroll.innerHTML = `
+    tableScroll.innerHTML=`
       <table class="topic-table">
-        <thead>
-          <tr>
-            <th style="width:22%">Topic / Subtopic</th>
-            <th style="width:28%">Key Content to be Taught</th>
-            <th style="width:14%">Notional Hours</th>
-            <th style="width:28%">Engagement Activity</th>
-            <th style="width:8%">Action</th>
-          </tr>
-        </thead>
+        <thead><tr>
+          <th style="width:22%">Topic / Subtopic</th>
+          <th style="width:28%">Key Content to be Taught</th>
+          <th style="width:14%">Notional Hours</th>
+          <th style="width:28%">Engagement Activity</th>
+          <th style="width:8%">Action</th>
+        </tr></thead>
         <tbody></tbody>
-      </table>
-    `;
-
+      </table>`;
     const tbody = tableScroll.querySelector('tbody');
-
     rows.forEach((row,index)=>{
       const tr = document.createElement('tr');
-      tr.innerHTML = `
-        <td><input class="table-input" placeholder="e.g. Financial statements overview" value="${escHtml(row.topic || '')}"></td>
-        <td><textarea class="table-textarea" placeholder="Main content concepts, procedures or skills...">${escHtml(row.keyContent || '')}</textarea></td>
-        <td><input class="table-input" placeholder="e.g. 3" value="${escHtml(row.notionalHours || '')}"></td>
-        <td><textarea class="table-textarea" placeholder="e.g. case study, discussion, practical exercise...">${escHtml(row.engagementActivity || '')}</textarea></td>
+      tr.innerHTML=`
+        <td><input class="table-input" placeholder="e.g. Financial statements overview" value="${escHtml(row.topic||'')}"></td>
+        <td><textarea class="table-textarea" placeholder="Main content concepts, procedures or skills…">${escHtml(row.keyContent||'')}</textarea></td>
+        <td><input class="table-input" placeholder="e.g. 3" value="${escHtml(row.notionalHours||'')}"></td>
+        <td><textarea class="table-textarea" placeholder="e.g. case study, discussion, practical exercise…">${escHtml(row.engagementActivity||'')}</textarea></td>
         <td><button type="button" class="btn-small btn-remove-row">Remove</button></td>
       `;
-
-      const [topicEl, contentEl, hoursEl, engageEl] = tr.querySelectorAll('input, textarea');
-      const removeBtn = tr.querySelector('.btn-remove-row');
-
-      topicEl.addEventListener('input',()=>{ rows[index].topic = topicEl.value; onChange(rows.map(r=>({...r}))); updateTotalOnly(); });
-      contentEl.addEventListener('input',()=>{ rows[index].keyContent = contentEl.value; onChange(rows.map(r=>({...r}))); });
-      hoursEl.addEventListener('input',()=>{ rows[index].notionalHours = hoursEl.value; onChange(rows.map(r=>({...r}))); updateTotalOnly(); });
-      engageEl.addEventListener('input',()=>{ rows[index].engagementActivity = engageEl.value; onChange(rows.map(r=>({...r}))); });
-
-      removeBtn.addEventListener('click',()=>{
-        rows.splice(index,1);
-        if(!rows.length) rows.push(emptyTopicPlanRow());
-        sync();
-      });
-
+      const [topicEl,contentEl,hoursEl,engageEl] = tr.querySelectorAll('input,textarea');
+      topicEl.addEventListener('input',()=>{ rows[index].topic=topicEl.value; onChange(rows.map(r=>({...r}))); updateTotalOnly(); });
+      contentEl.addEventListener('input',()=>{ rows[index].keyContent=contentEl.value; onChange(rows.map(r=>({...r}))); });
+      hoursEl.addEventListener('input',()=>{ rows[index].notionalHours=hoursEl.value; onChange(rows.map(r=>({...r}))); updateTotalOnly(); });
+      engageEl.addEventListener('input',()=>{ rows[index].engagementActivity=engageEl.value; onChange(rows.map(r=>({...r}))); });
+      tr.querySelector('.btn-remove-row').addEventListener('click',()=>{ rows.splice(index,1); if(!rows.length) rows.push(emptyTopicPlanRow()); sync(); });
       tbody.appendChild(tr);
     });
-
     updateTotalOnly();
   }
-
-  function updateTotalOnly(){
-    totalBox.textContent = `Total notional hours: ${getTotalHours(rows)}`;
-  }
-
-  tools.querySelector('.btn-add-row').addEventListener('click',()=>{
-    rows.push(emptyTopicPlanRow());
-    sync();
-  });
-
+  tools.querySelector('.btn-add-row').addEventListener('click',()=>{ rows.push(emptyTopicPlanRow()); sync(); });
   renderTable();
   return wrap;
 }
 
+// ─────────────────────────────────────────────────────────────────
+// FIELD BUILDER
+// ─────────────────────────────────────────────────────────────────
 function buildField(field, value, onChange, aiPopulated){
   const wrap = document.createElement('div');
-  wrap.className = 'field-group';
+  wrap.className='field-group';
 
   const label = document.createElement('label');
-  label.className = 'field-label';
-  label.textContent = field.label;
+  label.className='field-label';
+  label.textContent=field.label;
   wrap.appendChild(label);
 
-  if(field.type === 'textarea'){
+  if(field.hint){
+    const hint = document.createElement('div');
+    hint.className='field-hint';
+    hint.textContent=field.hint;
+    wrap.appendChild(hint);
+  }
+
+  if(field.type==='textarea'){
     const el = document.createElement('textarea');
-    el.className = 'field-textarea' + (aiPopulated ? ' ai-populated' : '');
-    el.placeholder = field.placeholder || '';
-    el.value = value || '';
+    el.className='field-textarea'+(aiPopulated?' ai-populated':'');
+    el.placeholder=field.placeholder||'';
+    el.value=value||'';
     el.addEventListener('input',()=>onChange(el.value));
     wrap.appendChild(el);
-  } else if(field.type === 'text'){
+  } else if(field.type==='text'){
     const el = document.createElement('input');
-    el.type = 'text';
-    el.className = 'field-input' + (aiPopulated ? ' ai-populated' : '');
-    el.placeholder = field.placeholder || '';
-    el.value = value || '';
+    el.type='text';
+    el.className='field-input'+(aiPopulated?' ai-populated':'');
+    el.placeholder=field.placeholder||'';
+    el.value=value||'';
     el.addEventListener('input',()=>onChange(el.value));
     wrap.appendChild(el);
-  } else if(field.type === 'select'){
+  } else if(field.type==='select'){
     const el = document.createElement('select');
-    el.className = 'field-select' + (aiPopulated ? ' ai-populated' : '');
+    el.className='field-select'+(aiPopulated?' ai-populated':'');
     const blank = document.createElement('option');
-    blank.value = '';
-    blank.textContent = 'Select...';
+    blank.value=''; blank.textContent='Select…';
     el.appendChild(blank);
     field.options.forEach(opt=>{
       const o = document.createElement('option');
-      o.value = opt;
-      o.textContent = opt;
-      if(value === opt) o.selected = true;
+      o.value=opt; o.textContent=opt;
+      if(value===opt) o.selected=true;
       el.appendChild(o);
     });
     el.addEventListener('change',()=>onChange(el.value));
     wrap.appendChild(el);
-  } else if(field.type === 'tags'){
+  } else if(field.type==='tags'){
     const tagWrap = document.createElement('div');
-    tagWrap.className = 'tag-wrap' + (aiPopulated ? ' ai-populated' : '');
-    let tags = Array.isArray(value) ? [...value] : [];
-
-    const refresh = ()=>{
-      tagWrap.innerHTML = '';
+    tagWrap.className='tag-wrap'+(aiPopulated?' ai-populated':'');
+    let tags = Array.isArray(value)?[...value]:[];
+    const refresh=()=>{
+      tagWrap.innerHTML='';
       const row = document.createElement('div');
-      row.className = 'tags-row';
-
-      tags.forEach((tag, i)=>{
-        const pill = document.createElement('span');
-        pill.className = 'tag-pill';
-        pill.innerHTML = `${escHtml(tag)} <button class="tag-remove">×</button>`;
-        pill.querySelector('.tag-remove').addEventListener('click',()=>{
-          tags.splice(i,1);
-          onChange([...tags]);
-          refresh();
-        });
+      row.className='tags-row';
+      tags.forEach((tag,i)=>{
+        const pill=document.createElement('span');
+        pill.className='tag-pill';
+        pill.innerHTML=`${escHtml(tag)} <button class="tag-remove">×</button>`;
+        pill.querySelector('.tag-remove').addEventListener('click',()=>{ tags.splice(i,1); onChange([...tags]); refresh(); });
         row.appendChild(pill);
       });
-
       tagWrap.appendChild(row);
-
-      const inp = document.createElement('input');
-      inp.type = 'text';
-      inp.className = 'tag-input-field';
-      inp.placeholder = tags.length ? '' : (field.placeholder || '');
+      const inp=document.createElement('input');
+      inp.type='text';
+      inp.className='tag-input-field';
+      inp.placeholder=tags.length?'':(field.placeholder||'');
       inp.addEventListener('keydown',e=>{
-        if((e.key === 'Enter' || e.key === ',') && inp.value.trim()){
+        if((e.key==='Enter'||e.key===',')&&inp.value.trim()){
           e.preventDefault();
-          const t = inp.value.trim();
-          if(!tags.includes(t)){
-            tags.push(t);
-            onChange([...tags]);
-            refresh();
-          }
+          const t=inp.value.trim();
+          if(!tags.includes(t)){ tags.push(t); onChange([...tags]); refresh(); }
         }
       });
       tagWrap.appendChild(inp);
     };
-
     refresh();
     wrap.appendChild(tagWrap);
-  } else if(field.type === 'checkboxes'){
-    let selected = Array.isArray(value) ? [...value] : [];
-    const grid = document.createElement('div');
-    grid.className = 'checkbox-grid';
-
+  } else if(field.type==='checkboxes'){
+    let selected=Array.isArray(value)?[...value]:[];
+    const grid=document.createElement('div');
+    grid.className='checkbox-grid';
     field.options.forEach(opt=>{
-      const item = document.createElement('div');
-      item.className = 'check-item' + (selected.includes(opt) ? ' checked' : '');
-      item.innerHTML = `<div class="check-box"><span class="check-tick">✓</span></div><span class="check-label">${escHtml(opt)}</span>`;
+      const item=document.createElement('div');
+      item.className='check-item'+(selected.includes(opt)?' checked':'');
+      item.innerHTML=`<div class="check-box"><span class="check-tick">✓</span></div><span class="check-label">${escHtml(opt)}</span>`;
       item.addEventListener('click',()=>{
-        if(selected.includes(opt)) selected = selected.filter(v=>v!==opt);
+        if(selected.includes(opt)) selected=selected.filter(v=>v!==opt);
         else selected.push(opt);
-        item.classList.toggle('checked', selected.includes(opt));
+        item.classList.toggle('checked',selected.includes(opt));
         onChange([...selected]);
       });
       grid.appendChild(item);
     });
-
     wrap.appendChild(grid);
-  } else if(field.type === 'topicTable'){
-    wrap.appendChild(buildTopicTableField(value, onChange));
+  } else if(field.type==='topicTable'){
+    wrap.appendChild(buildTopicTableField(value,onChange));
   }
 
   return wrap;
 }
 
+// ─────────────────────────────────────────────────────────────────
+// RENDER CONTENT  (with Unit Description card)
+// ─────────────────────────────────────────────────────────────────
 function renderContent(){
   const unit = getUnit();
   const content = document.getElementById('stepContent');
   const empty = document.getElementById('emptyState');
 
-  if(!unit){
-    empty.style.display = 'flex';
-    content.style.display = 'none';
-    return;
-  }
+  if(!unit){ empty.style.display='flex'; content.style.display='none'; return; }
+  empty.style.display='none';
+  content.style.display='block';
+  content.innerHTML='';
 
-  empty.style.display = 'none';
-  content.style.display = 'block';
-  content.innerHTML = '';
+  // ── Unit Description Card ────────────────────────────────────
+  const descCard = document.createElement('div');
+  descCard.className='unit-desc-card';
+  descCard.innerHTML=`
+    <div class="unit-desc-header">
+      <span class="unit-desc-title">📝 Course Unit Description</span>
+      <span class="unit-desc-badge">${escHtml(unit.name)}</span>
+    </div>
+  `;
+  const descTA = document.createElement('textarea');
+  descTA.className='unit-desc-textarea'+(unit.aiGenerated&&unit.description?' ai-populated':'');
+  descTA.placeholder='Write a 2–3 sentence description of this unit: what it covers, who it is for, and why it matters to learners…';
+  descTA.value=unit.description||'';
+  descTA.addEventListener('input',()=>{ unit.description=descTA.value; });
+  descCard.appendChild(descTA);
+  const descHint = document.createElement('div');
+  descHint.className='unit-desc-hint';
+  descHint.textContent='This description appears in the unit export and helps orientate learners. Keep it concise and purposeful.';
+  descCard.appendChild(descHint);
+  content.appendChild(descCard);
 
+  // ── Step Header ───────────────────────────────────────────────
   const step = STEPS.find(s=>s.id===state.activeStep);
   const data = unit.data[step.id];
-  const pct = getCompletion(unit, step.id);
+  const pct = getCompletion(unit,step.id);
 
   const header = document.createElement('div');
-  header.className = 'step-header';
-  header.style.background = `linear-gradient(135deg,${step.color}ee,${step.color}99)`;
-  header.innerHTML = `
+  header.className='step-header';
+  header.style.background=`linear-gradient(135deg,${step.color}ee,${step.color}99)`;
+  header.innerHTML=`
     <div class="step-header-inner">
       <div class="step-icon-big">${step.icon}</div>
       <div style="flex:1">
         <div class="step-num-label">Step ${step.id} of ${STEPS.length}</div>
         <div class="step-title">${step.title}</div>
-        ${unit.aiGenerated ? '<div class="ai-filled-badge">✦ AI-Enhanced</div>' : ''}
+        ${unit.aiGenerated?'<div class="ai-filled-badge">✦ AI-Enhanced</div>':''}
         <div class="step-progress-row">
           <div class="step-progress-bar"><div class="step-progress-fill" id="stepProgFill" style="width:${pct}%"></div></div>
           <span class="step-pct-label" id="stepProgTxt">${pct}% complete</span>
         </div>
+        ${step.evaluatorNote?`<div class="step-evaluator-note"><strong>📌 Design Guidance:</strong> ${escHtml(step.evaluatorNote)}</div>`:''}
       </div>
     </div>
   `;
   content.appendChild(header);
 
   const card = document.createElement('div');
-  card.className = 'form-card';
+  card.className='form-card';
 
   step.fields.forEach(field=>{
-    const ai = unit.aiGenerated && (Array.isArray(data[field.key]) ? data[field.key].length > 0 : !!String(data[field.key] || '').trim());
+    const ai = unit.aiGenerated&&(Array.isArray(data[field.key])?data[field.key].length>0:!!String(data[field.key]||'').trim());
     const node = buildField(field, data[field.key], val=>{
-      unit.data[step.id][field.key] = val;
+      unit.data[step.id][field.key]=val;
       updateProgress();
     }, ai);
     card.appendChild(node);
   });
-
   content.appendChild(card);
 
+  // ── Navigation ────────────────────────────────────────────────
   const nav = document.createElement('div');
-  nav.className = 'step-nav-btns';
+  nav.className='step-nav-btns';
 
   const prevBtn = document.createElement('button');
-  prevBtn.className = 'btn-prev';
-  prevBtn.textContent = '← Previous';
-  prevBtn.disabled = step.id === 1;
-  prevBtn.addEventListener('click',()=>{
-    state.activeStep--;
-    renderContent();
-    renderSteps();
-  });
+  prevBtn.className='btn-prev';
+  prevBtn.textContent='← Previous';
+  prevBtn.disabled=step.id===1;
+  prevBtn.addEventListener('click',()=>{ state.activeStep--; renderContent(); renderSteps(); });
   nav.appendChild(prevBtn);
 
   const dots = document.createElement('div');
-  dots.className = 'dots-nav';
+  dots.className='dots-nav';
   STEPS.forEach(s=>{
-    const d = document.createElement('div');
-    d.className = 'dot' + (s.id === step.id ? ' active' : '') + (getCompletion(unit, s.id) === 100 ? ' done' : '');
-    if(s.id === step.id) d.style.background = step.color;
-    d.addEventListener('click',()=>{
-      state.activeStep = s.id;
-      renderContent();
-      renderSteps();
-    });
+    const d=document.createElement('div');
+    d.className='dot'+(s.id===step.id?' active':'')+(getCompletion(unit,s.id)===100?' done':'');
+    if(s.id===step.id) d.style.background=step.color;
+    d.addEventListener('click',()=>{ state.activeStep=s.id; renderContent(); renderSteps(); });
     dots.appendChild(d);
   });
   nav.appendChild(dots);
 
-  if(step.id < STEPS.length){
-    const nextBtn = document.createElement('button');
-    nextBtn.className = 'btn-next';
-    nextBtn.style.background = `linear-gradient(135deg,${step.color},${STEPS[step.id].color})`;
-    nextBtn.textContent = 'Next →';
-    nextBtn.addEventListener('click',()=>{
-      state.activeStep++;
-      renderContent();
-      renderSteps();
-    });
+  if(step.id<STEPS.length){
+    const nextBtn=document.createElement('button');
+    nextBtn.className='btn-next';
+    nextBtn.style.background=`linear-gradient(135deg,${step.color},${STEPS[step.id].color})`;
+    nextBtn.textContent='Next →';
+    nextBtn.addEventListener('click',()=>{ state.activeStep++; renderContent(); renderSteps(); });
     nav.appendChild(nextBtn);
   } else {
-    const completeBtn = document.createElement('button');
-    completeBtn.className = 'btn-complete';
-    completeBtn.textContent = '✓ Complete Unit';
+    const completeBtn=document.createElement('button');
+    completeBtn.className='btn-complete';
+    completeBtn.textContent='✓ Complete Unit';
     completeBtn.addEventListener('click',()=>showCompleteModal(unit));
     nav.appendChild(completeBtn);
   }
-
   content.appendChild(nav);
 }
 
 function updateProgress(){
-  renderSteps();
-  renderUnits();
-  renderHeaderRing();
-  const unit = getUnit();
-  const pct = getCompletion(unit, state.activeStep);
-  const fill = document.getElementById('stepProgFill');
-  const txt = document.getElementById('stepProgTxt');
-  if(fill) fill.style.width = pct + '%';
-  if(txt) txt.textContent = pct + '% complete';
+  renderSteps(); renderUnits(); renderHeaderRing();
+  const unit=getUnit();
+  const pct=getCompletion(unit,state.activeStep);
+  const fill=document.getElementById('stepProgFill');
+  const txt=document.getElementById('stepProgTxt');
+  if(fill) fill.style.width=pct+'%';
+  if(txt) txt.textContent=pct+'% complete';
 }
 
-function render(){
-  renderUnits();
-  renderSteps();
-  renderContent();
-  renderHeaderRing();
-}
+function render(){ renderUnits(); renderSteps(); renderContent(); renderHeaderRing(); }
 
 function showCompleteModal(unit){
-  let html = '';
+  let html='';
   STEPS.forEach(step=>{
-    const pct = getCompletion(unit, step.id);
-    html += `<div class="modal-summary-row"><span>${step.icon} ${step.title}</span><span class="spct">${pct}%</span></div>`;
+    const pct=getCompletion(unit,step.id);
+    html+=`<div class="modal-summary-row"><span>${step.icon} ${step.title}</span><span class="spct">${pct}%</span></div>`;
   });
-  document.getElementById('completeSummary').innerHTML = html;
+  document.getElementById('completeSummary').innerHTML=html;
   document.getElementById('completeModal').classList.add('open');
 }
 
+// ─────────────────────────────────────────────────────────────────
+// HTML EXPORT
+// ─────────────────────────────────────────────────────────────────
 function formatValueForHtml(value){
   if(Array.isArray(value)){
     if(!value.length) return '<p>—</p>';
     return `<ul>${value.map(v=>`<li>${escHtml(v)}</li>`).join('')}</ul>`;
   }
-  const txt = String(value || '').trim();
+  const txt=String(value||'').trim();
   if(!txt) return '<p>—</p>';
   return `<p>${escHtml(txt).replace(/\n/g,'<br>')}</p>`;
 }
 
 function topicPlansTableHtml(rows){
-  const cleanRows = normalizeTopicPlans(rows);
+  const cleanRows=normalizeTopicPlans(rows);
   if(!cleanRows.length) return '<p>—</p>';
-
-  const total = cleanRows.reduce((sum,row)=>{
-    const n = parseFloat(String(row.notionalHours || '').replace(/[^0-9.]/g,''));
-    return sum + (isNaN(n) ? 0 : n);
-  },0);
-
+  const total=cleanRows.reduce((sum,row)=>{ const n=parseFloat(String(row.notionalHours||'').replace(/[^0-9.]/g,'')); return sum+(isNaN(n)?0:n); },0);
   return `
     <table style="width:100%;border-collapse:collapse;margin-top:6px">
-      <thead>
-        <tr>
-          <th style="border:1px solid #dbe9ed;padding:10px;background:#f3fbfc;text-align:left">Topic / Subtopic</th>
-          <th style="border:1px solid #dbe9ed;padding:10px;background:#f3fbfc;text-align:left">Key Content</th>
-          <th style="border:1px solid #dbe9ed;padding:10px;background:#f3fbfc;text-align:left">Notional Hours</th>
-          <th style="border:1px solid #dbe9ed;padding:10px;background:#f3fbfc;text-align:left">Engagement Activity</th>
-        </tr>
-      </thead>
+      <thead><tr>
+        <th style="border:1px solid #dbe9ed;padding:10px;background:#f3fbfc;text-align:left">Topic / Subtopic</th>
+        <th style="border:1px solid #dbe9ed;padding:10px;background:#f3fbfc;text-align:left">Key Content</th>
+        <th style="border:1px solid #dbe9ed;padding:10px;background:#f3fbfc;text-align:left">Notional Hours</th>
+        <th style="border:1px solid #dbe9ed;padding:10px;background:#f3fbfc;text-align:left">Engagement Activity</th>
+      </tr></thead>
       <tbody>
         ${cleanRows.map(row=>`
           <tr>
-            <td style="border:1px solid #dbe9ed;padding:10px;vertical-align:top">${escHtml(row.topic || '—')}</td>
-            <td style="border:1px solid #dbe9ed;padding:10px;vertical-align:top">${escHtml(row.keyContent || '—').replace(/\n/g,'<br>')}</td>
-            <td style="border:1px solid #dbe9ed;padding:10px;vertical-align:top">${escHtml(row.notionalHours || '—')}</td>
-            <td style="border:1px solid #dbe9ed;padding:10px;vertical-align:top">${escHtml(row.engagementActivity || '—').replace(/\n/g,'<br>')}</td>
-          </tr>
-        `).join('')}
+            <td style="border:1px solid #dbe9ed;padding:10px;vertical-align:top">${escHtml(row.topic||'—')}</td>
+            <td style="border:1px solid #dbe9ed;padding:10px;vertical-align:top">${escHtml(row.keyContent||'—').replace(/\n/g,'<br>')}</td>
+            <td style="border:1px solid #dbe9ed;padding:10px;vertical-align:top">${escHtml(row.notionalHours||'—')}</td>
+            <td style="border:1px solid #dbe9ed;padding:10px;vertical-align:top">${escHtml(row.engagementActivity||'—').replace(/\n/g,'<br>')}</td>
+          </tr>`).join('')}
       </tbody>
     </table>
     <p style="margin-top:10px;font-weight:700;color:#176344">Total notional hours: ${total}</p>
@@ -1518,46 +1036,35 @@ function topicPlansTableHtml(rows){
 }
 
 function generateUnitHtml(unit){
-  const totalProgress = getTotalProgress(unit);
-
-  const sections = STEPS.map(step=>{
-    const data = unit.data[step.id] || {};
-    const fieldsHtml = step.fields.map(field=>{
-      let valueHtml = field.type === 'topicTable' ? topicPlansTableHtml(data[field.key]) : formatValueForHtml(data[field.key]);
-      return `
-        <div class="field-block">
-          <div class="field-label">${escHtml(field.label)}</div>
-          <div class="field-value">${valueHtml}</div>
-        </div>
-      `;
+  const totalProgress=getTotalProgress(unit);
+  const sections=STEPS.map(step=>{
+    const data=unit.data[step.id]||{};
+    const fieldsHtml=step.fields.map(field=>{
+      let valueHtml=field.type==='topicTable'?topicPlansTableHtml(data[field.key]):formatValueForHtml(data[field.key]);
+      return `<div class="field-block"><div class="field-label">${escHtml(field.label)}</div><div class="field-value">${valueHtml}</div></div>`;
     }).join('');
-
     return `
       <section class="step-section">
         <div class="step-head" style="background:${step.color}">
           <div class="step-icon">${step.icon}</div>
-          <div>
-            <div class="step-no">STEP ${step.id}</div>
-            <h2>${escHtml(step.title)}</h2>
-          </div>
+          <div><div class="step-no">STEP ${step.id}</div><h2>${escHtml(step.title)}</h2></div>
         </div>
         <div class="step-body">${fieldsHtml}</div>
-      </section>
-    `;
+      </section>`;
   }).join('');
 
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>${escHtml(unit.name)} - CompetencyPath Export</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>${escHtml(unit.name)} – CompetencyPath Export</title>
 <style>
   body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f4f8f9;color:#1f3940;line-height:1.55}
   .container{max-width:1100px;margin:0 auto;padding:28px 20px 60px}
   .hero{background:linear-gradient(135deg,#0a5d6e,#0d7d8c,#1fa882);color:#fff;border-radius:18px;padding:26px 28px;margin-bottom:24px}
-  .hero h1{margin:0 0 8px;font-size:30px;line-height:1.2}
-  .hero p{margin:4px 0;opacity:.95}
+  .hero h1{margin:0 0 6px;font-size:30px;line-height:1.2}
+  .hero .unit-desc{margin:8px 0 14px;font-size:15px;opacity:.95;line-height:1.6;max-width:780px}
   .meta{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
   .meta-badge{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);padding:8px 12px;border-radius:999px;font-size:13px}
   .step-section{background:#fff;border-radius:16px;overflow:hidden;margin-bottom:18px;box-shadow:0 4px 18px rgba(0,0,0,.05);border:1px solid #e3eef1}
@@ -1579,310 +1086,251 @@ function generateUnitHtml(unit){
   <div class="container">
     <div class="hero">
       <h1>${escHtml(unit.name)}</h1>
-      <p>Competency-based course unit export</p>
+      ${unit.description?`<div class="unit-desc">${escHtml(unit.description)}</div>`:''}
       <div class="meta">
         <div class="meta-badge">Overall completion: ${totalProgress}%</div>
-        <div class="meta-badge">AI-enhanced: ${unit.aiGenerated ? 'Yes' : 'No'}</div>
+        <div class="meta-badge">AI-enhanced: ${unit.aiGenerated?'Yes':'No'}</div>
         <div class="meta-badge">Exported from CompetencyPath</div>
+        <div class="meta-badge">Kampala International University</div>
       </div>
     </div>
     ${sections}
-    <div class="footer-note">Exported from CompetencyPath as standalone HTML.</div>
+    <div class="footer-note">Exported from CompetencyPath · By Dr. Michael Adelani Adewusi · Kampala International University, Uganda</div>
   </div>
 </body>
 </html>`;
 }
 
 function downloadActiveUnitHtml(){
-  const unit = getUnit();
-  if(!unit){
-    alert('Please select a unit first.');
-    return;
-  }
-  const html = generateUnitHtml(unit);
-  const blob = new Blob([html], { type:'text/html;charset=utf-8' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  const safeName = unit.name.replace(/[^\w\- ]+/g,'').trim().replace(/\s+/g,'_') || 'course_unit';
-  a.href = url;
-  a.download = `${safeName}.html`;
+  const unit=getUnit();
+  if(!unit){ alert('Please select a unit first.'); return; }
+  const html=generateUnitHtml(unit);
+  const blob=new Blob([html],{type:'text/html;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;
+  a.download=`${(unit.name.replace(/[^\w\- ]+/g,'').trim().replace(/\s+/g,'_'))||'course_unit'}.html`;
   document.body.appendChild(a);
   a.click();
   a.remove();
   URL.revokeObjectURL(url);
 }
 
+// ─────────────────────────────────────────────────────────────────
+// EVENT LISTENERS
+// ─────────────────────────────────────────────────────────────────
 document.getElementById('menuBtn').addEventListener('click',()=>{
-  state.sidebarOpen = !state.sidebarOpen;
-  document.getElementById('sidebar').classList.toggle('collapsed', !state.sidebarOpen);
+  state.sidebarOpen=!state.sidebarOpen;
+  document.getElementById('sidebar').classList.toggle('collapsed',!state.sidebarOpen);
 });
-
-document.getElementById('openImportBtn').addEventListener('click',()=>{
-  populateTargetSelect();
-  document.getElementById('importModal').classList.add('open');
-});
-document.getElementById('closeImportModal').addEventListener('click',()=>{
-  document.getElementById('importModal').classList.remove('open');
-});
-document.getElementById('importModal').addEventListener('click',e=>{
-  if(e.target === document.getElementById('importModal')){
-    document.getElementById('importModal').classList.remove('open');
-  }
-});
-
-document.getElementById('closeCompleteModal').addEventListener('click',()=>{
-  document.getElementById('completeModal').classList.remove('open');
-});
-document.getElementById('completeModal').addEventListener('click',e=>{
-  if(e.target === document.getElementById('completeModal')){
-    document.getElementById('completeModal').classList.remove('open');
-  }
-});
+document.getElementById('openImportBtn').addEventListener('click',()=>{ populateTargetSelect(); document.getElementById('importModal').classList.add('open'); });
+document.getElementById('closeImportModal').addEventListener('click',()=>{ document.getElementById('importModal').classList.remove('open'); });
+document.getElementById('importModal').addEventListener('click',e=>{ if(e.target===document.getElementById('importModal')) document.getElementById('importModal').classList.remove('open'); });
+document.getElementById('closeCompleteModal').addEventListener('click',()=>{ document.getElementById('completeModal').classList.remove('open'); });
+document.getElementById('completeModal').addEventListener('click',e=>{ if(e.target===document.getElementById('completeModal')) document.getElementById('completeModal').classList.remove('open'); });
 
 document.querySelectorAll('.import-tab').forEach(tab=>{
   tab.addEventListener('click',()=>{
     document.querySelectorAll('.import-tab').forEach(t=>t.classList.remove('active'));
     tab.classList.add('active');
-    ['paste','upload','tips'].forEach(name=>{
-      document.getElementById(`tab-${name}`).style.display = tab.dataset.tab === name ? 'block' : 'none';
-    });
+    ['paste','upload','tips'].forEach(name=>{ document.getElementById(`tab-${name}`).style.display=tab.dataset.tab===name?'block':'none'; });
   });
 });
 
 document.getElementById('showAddUnitBtn').addEventListener('click',()=>{
-  document.getElementById('showAddUnitBtn').style.display = 'none';
-  document.getElementById('addUnitForm').style.display = 'block';
+  document.getElementById('showAddUnitBtn').style.display='none';
+  document.getElementById('addUnitForm').style.display='block';
   document.getElementById('newUnitInput').focus();
 });
-
 document.getElementById('cancelAddUnit').addEventListener('click',()=>{
-  document.getElementById('addUnitForm').style.display = 'none';
-  document.getElementById('showAddUnitBtn').style.display = '';
-  document.getElementById('newUnitInput').value = '';
+  document.getElementById('addUnitForm').style.display='none';
+  document.getElementById('showAddUnitBtn').style.display='';
+  document.getElementById('newUnitInput').value='';
 });
-
 function doAddUnit(){
-  const name = document.getElementById('newUnitInput').value.trim();
+  const name=document.getElementById('newUnitInput').value.trim();
   if(!name) return;
-  const id = Date.now();
-  state.units.push({id,name,data:defaultData(),aiGenerated:false});
-  state.activeUnit = id;
-  state.activeStep = 1;
-  document.getElementById('newUnitInput').value = '';
-  document.getElementById('addUnitForm').style.display = 'none';
-  document.getElementById('showAddUnitBtn').style.display = '';
+  const id=Date.now();
+  state.units.push({id, name, description:'', data:defaultData(), aiGenerated:false});
+  state.activeUnit=id; state.activeStep=1;
+  document.getElementById('newUnitInput').value='';
+  document.getElementById('addUnitForm').style.display='none';
+  document.getElementById('showAddUnitBtn').style.display='';
   render();
 }
 document.getElementById('confirmAddUnit').addEventListener('click',doAddUnit);
-document.getElementById('newUnitInput').addEventListener('keydown',e=>{
-  if(e.key === 'Enter') doAddUnit();
-});
+document.getElementById('newUnitInput').addEventListener('keydown',e=>{ if(e.key==='Enter') doAddUnit(); });
 
 function populateTargetSelect(){
-  const sel = document.getElementById('targetUnitSelect');
-  sel.innerHTML = '';
+  const sel=document.getElementById('targetUnitSelect');
+  sel.innerHTML='';
   state.units.forEach(u=>{
-    const opt = document.createElement('option');
-    opt.value = u.id;
-    opt.textContent = u.name;
-    if(u.id === state.activeUnit) opt.selected = true;
+    const opt=document.createElement('option');
+    opt.value=u.id; opt.textContent=u.name;
+    if(u.id===state.activeUnit) opt.selected=true;
     sel.appendChild(opt);
   });
-  const newOpt = document.createElement('option');
-  newOpt.value = 'new';
-  newOpt.textContent = '+ Create new unit from this write-up';
+  const newOpt=document.createElement('option');
+  newOpt.value='new'; newOpt.textContent='+ Create new unit from this write-up';
   sel.appendChild(newOpt);
 }
 
-document.getElementById('writeupInput').addEventListener('input',function(){
-  document.getElementById('charCount').textContent = this.value.length;
-});
+document.getElementById('writeupInput').addEventListener('input',function(){ document.getElementById('charCount').textContent=this.value.length; });
+document.getElementById('chooseFileBtn').addEventListener('click',()=>{ document.getElementById('fileInput').click(); });
+document.getElementById('fileInput').addEventListener('change',async e=>{ const file=e.target.files?.[0]; if(file) await handleSelectedFile(file); });
+const fileBox=document.getElementById('fileBox');
+['dragenter','dragover'].forEach(evt=>{ fileBox.addEventListener(evt,e=>{ e.preventDefault(); fileBox.classList.add('dragover'); }); });
+['dragleave','drop'].forEach(evt=>{ fileBox.addEventListener(evt,e=>{ e.preventDefault(); fileBox.classList.remove('dragover'); }); });
+fileBox.addEventListener('drop',async e=>{ const file=e.dataTransfer.files?.[0]; if(file) await handleSelectedFile(file); });
 
-document.getElementById('chooseFileBtn').addEventListener('click',()=>{
-  document.getElementById('fileInput').click();
-});
-
-document.getElementById('fileInput').addEventListener('change',async e=>{
-  const file = e.target.files?.[0];
-  if(file) await handleSelectedFile(file);
-});
-
-const fileBox = document.getElementById('fileBox');
-['dragenter','dragover'].forEach(evt=>{
-  fileBox.addEventListener(evt,e=>{
-    e.preventDefault();
-    fileBox.classList.add('dragover');
-  });
-});
-['dragleave','drop'].forEach(evt=>{
-  fileBox.addEventListener(evt,e=>{
-    e.preventDefault();
-    fileBox.classList.remove('dragover');
-  });
-});
-fileBox.addEventListener('drop',async e=>{
-  const file = e.dataTransfer.files?.[0];
-  if(file) await handleSelectedFile(file);
-});
-
-function setGenStep(n, done){
-  for(let i = 1; i <= 7; i++){
-    const el = document.getElementById('gs' + i);
+function setGenStep(n,done){
+  for(let i=1;i<=7;i++){
+    const el=document.getElementById('gs'+i);
     if(!el) continue;
-    if(i < n){
-      el.classList.add('done');
-      el.querySelector('.gs-icon').textContent = '✅';
-    } else if(i === n){
-      el.querySelector('.gs-icon').textContent = done ? '✅' : '⏳';
-      if(done) el.classList.add('done');
-    } else {
-      el.classList.remove('done');
-      el.querySelector('.gs-icon').textContent = '⏳';
-    }
+    if(i<n){ el.classList.add('done'); el.querySelector('.gs-icon').textContent='✅'; }
+    else if(i===n){ el.querySelector('.gs-icon').textContent=done?'✅':'⏳'; if(done) el.classList.add('done'); }
+    else { el.classList.remove('done'); el.querySelector('.gs-icon').textContent='⏳'; }
   }
 }
 
+// ─────────────────────────────────────────────────────────────────
+// AI GENERATION
+// ─────────────────────────────────────────────────────────────────
 async function callBackendGenerator(combinedInput){
-  const res = await fetch('/api/generate-course-design', {
+  const res=await fetch('/api/generate-course-design',{
     method:'POST',
-    headers:{ 'Content-Type':'application/json' },
-    body: JSON.stringify({ combinedInput })
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({combinedInput})
   });
-
-  if(!res.ok){
-    const errText = await res.text();
-    throw new Error(`Server request failed: ${res.status} ${errText}`);
-  }
-
+  if(!res.ok){ const errText=await res.text(); throw new Error(`Server request failed: ${res.status} ${errText}`); }
   return await res.json();
 }
 
 async function runAIGeneration(){
-  const combinedInput = buildCombinedInput();
-  if(!combinedInput){
-    alert('Please paste text or upload a file first.');
-    return;
-  }
+  const combinedInput=buildCombinedInput();
+  if(!combinedInput){ alert('Please paste text or upload a file first.'); return; }
 
-  const targetVal = document.getElementById('targetUnitSelect').value;
-  const btn = document.getElementById('generateBtn');
-  const statusEl = document.getElementById('aiStatus');
-  const genList = document.getElementById('genStepsList');
-  const statusTxt = document.getElementById('aiStatusText');
+  const targetVal=document.getElementById('targetUnitSelect').value;
+  const btn=document.getElementById('generateBtn');
+  const statusEl=document.getElementById('aiStatus');
+  const genList=document.getElementById('genStepsList');
+  const statusTxt=document.getElementById('aiStatusText');
 
-  btn.disabled = true;
-  statusEl.className = 'ai-status loading';
-  statusTxt.textContent = 'Reading and extracting your course content...';
-  genList.style.display = 'block';
+  btn.disabled=true;
+  statusEl.className='ai-status loading';
+  statusTxt.textContent='Reading and extracting your course content…';
+  genList.style.display='block';
   setGenStep(1,false);
 
   try{
-    setTimeout(()=>{setGenStep(1,true);setGenStep(2,false);statusTxt.textContent='Identifying competency gaps...';},700);
-    setTimeout(()=>{setGenStep(2,true);setGenStep(3,false);statusTxt.textContent='Mapping knowledge and skills...';},1400);
-    setTimeout(()=>{setGenStep(3,true);setGenStep(4,false);statusTxt.textContent='Defining SMART objectives...';},2100);
-    setTimeout(()=>{setGenStep(4,true);setGenStep(5,false);statusTxt.textContent='Building course content and notional hours...';},2800);
+    setTimeout(()=>{setGenStep(1,true);setGenStep(2,false);statusTxt.textContent='Identifying competency gaps…';},700);
+    setTimeout(()=>{setGenStep(2,true);setGenStep(3,false);statusTxt.textContent='Mapping knowledge and skills…';},1400);
+    setTimeout(()=>{setGenStep(3,true);setGenStep(4,false);statusTxt.textContent='Writing SMART objectives with performance indicators…';},2100);
+    setTimeout(()=>{setGenStep(4,true);setGenStep(5,false);statusTxt.textContent='Building content plan and notional hours…';},2800);
 
-    const parsed = await callBackendGenerator(combinedInput);
+    const parsed=await callBackendGenerator(combinedInput);
 
-    setTimeout(()=>{setGenStep(5,true);setGenStep(6,false);statusTxt.textContent='Structuring assessments and activities...';},3400);
-    setTimeout(()=>{setGenStep(6,true);setGenStep(7,false);statusTxt.textContent='Populating all 9 design steps...';},4000);
+    setTimeout(()=>{setGenStep(5,true);setGenStep(6,false);statusTxt.textContent='Designing assessments with alignment matrix…';},3400);
+    setTimeout(()=>{setGenStep(6,true);setGenStep(7,false);statusTxt.textContent='Populating flexible paths and feedback loops…';},4000);
 
-    const newData = defaultData();
+    const newData=defaultData();
 
-    newData[1] = {
-      currentState: parsed.step1?.currentState || '',
-      desiredState: parsed.step1?.desiredState || '',
-      gaps: parsed.step1?.gaps || '',
-      priority: parsed.step1?.priority || ''
+    // Step 1
+    newData[1]={
+      currentState:parsed.step1?.currentState||'',
+      desiredState:parsed.step1?.desiredState||'',
+      gaps:parsed.step1?.gaps||'',
+      priority:parsed.step1?.priority||''
     };
-    newData[2] = {
-      competencies: normalizeArray(parsed.step2?.competencies),
-      knowledgeAreas: parsed.step2?.knowledgeAreas || '',
-      skills: normalizeArray(parsed.step2?.skills),
-      mappingNotes: parsed.step2?.mappingNotes || ''
+    // Step 2
+    newData[2]={
+      competencies:normalizeArray(parsed.step2?.competencies),
+      knowledgeAreas:parsed.step2?.knowledgeAreas||'',
+      skills:normalizeArray(parsed.step2?.skills),
+      mappingNotes:parsed.step2?.mappingNotes||''
     };
-    newData[3] = {
-      specific: parsed.step3?.specific || '',
-      measurable: parsed.step3?.measurable || '',
-      achievable: parsed.step3?.achievable || '',
-      relevant: parsed.step3?.relevant || '',
-      timeBound: parsed.step3?.timeBound || ''
+    // Step 3 — improved with performance indicators, learner capability, complete objectives
+    newData[3]={
+      specific:parsed.step3?.specific||'',
+      measurable:parsed.step3?.measurable||'',
+      achievable:parsed.step3?.achievable||'',
+      relevant:parsed.step3?.relevant||'',
+      timeBound:parsed.step3?.timeBound||'',
+      completeObjectives:parsed.step3?.completeObjectives||''
     };
-    newData[4] = {
-      contentOverview: parsed.step4?.contentOverview || '',
-      topicPlans: normalizeTopicPlans(parsed.step4?.topicPlans),
-      contentRationale: parsed.step4?.contentRationale || ''
+    // Step 4
+    newData[4]={
+      contentOverview:parsed.step4?.contentOverview||'',
+      topicPlans:normalizeTopicPlans(parsed.step4?.topicPlans),
+      contentRationale:parsed.step4?.contentRationale||''
     };
-    newData[5] = {
-      formative: parsed.step5?.formative || '',
-      summative: parsed.step5?.summative || '',
-      rubric: parsed.step5?.rubric || '',
-      evidenceType: normalizeArray(parsed.step5?.evidenceType),
-      passingCriteria: parsed.step5?.passingCriteria || ''
+    // Step 5 — improved with alignment matrix and threshold justification
+    newData[5]={
+      formative:parsed.step5?.formative||'',
+      summative:parsed.step5?.summative||'',
+      rubric:parsed.step5?.rubric||'',
+      evidenceType:normalizeArray(parsed.step5?.evidenceType),
+      passingCriteria:parsed.step5?.passingCriteria||'',
+      competencyAlignment:parsed.step5?.competencyAlignment||'',
+      masteryJustification:parsed.step5?.masteryJustification||''
     };
-    newData[6] = {
-      modality: parsed.step6?.modality || '',
-      tools: normalizeArray(parsed.step6?.tools),
-      contentFormats: normalizeSubset(
-        parsed.step6?.contentFormats,
-        ["Video Lectures","Reading Materials","Interactive Simulations","Case Studies","Podcasts","Infographics","Live Webinars","Discussion Forums"]
-      ),
-      accessibilityNotes: parsed.step6?.accessibilityNotes || ''
+    // Step 6
+    newData[6]={
+      modality:parsed.step6?.modality||'',
+      tools:normalizeArray(parsed.step6?.tools),
+      contentFormats:normalizeSubset(parsed.step6?.contentFormats,["Video Lectures","Reading Materials","Interactive Simulations","Case Studies","Podcasts","Infographics","Live Webinars","Discussion Forums"]),
+      accessibilityNotes:parsed.step6?.accessibilityNotes||''
     };
-    newData[7] = {
-      activities: parsed.step7?.activities || '',
-      collaboration: parsed.step7?.collaboration || '',
-      gamification: parsed.step7?.gamification || '',
-      realWorld: parsed.step7?.realWorld || ''
+    // Step 7
+    newData[7]={
+      activities:parsed.step7?.activities||'',
+      collaboration:parsed.step7?.collaboration||'',
+      gamification:parsed.step7?.gamification||'',
+      realWorld:parsed.step7?.realWorld||''
     };
-    newData[8] = {
-      prerequisites: parsed.step8?.prerequisites || '',
-      paths: parsed.step8?.paths || '',
-      optionalContent: parsed.step8?.optionalContent || '',
-      adaptations: parsed.step8?.adaptations || ''
+    // Step 8 — improved with within-course paths, self-paced, unlocking, RPL
+    newData[8]={
+      prerequisites:parsed.step8?.prerequisites||'',
+      paths:parsed.step8?.paths||'',
+      optionalContent:parsed.step8?.optionalContent||'',
+      adaptations:parsed.step8?.adaptations||'',
+      selfPacedProgression:parsed.step8?.selfPacedProgression||'',
+      competencyUnlocking:parsed.step8?.competencyUnlocking||'',
+      rplProvision:parsed.step8?.rplProvision||''
     };
-    newData[9] = {
-      feedbackMechanisms: normalizeSubset(
-        parsed.step9?.feedbackMechanisms,
-        ["Automated Quiz Feedback","Instructor Comments","Peer Review","Self-Assessment","Learning Analytics","End-of-Unit Surveys","1-on-1 Check-ins"]
-      ),
-      feedbackSchedule: parsed.step9?.feedbackSchedule || '',
-      improvementLoop: parsed.step9?.improvementLoop || '',
-      successMetrics: normalizeArray(parsed.step9?.successMetrics)
+    // Step 9 — improved with baselines and targets
+    newData[9]={
+      feedbackMechanisms:normalizeSubset(parsed.step9?.feedbackMechanisms,["Automated Quiz Feedback","Instructor Comments","Peer Review","Self-Assessment","Learning Analytics","End-of-Unit Surveys","1-on-1 Check-ins"]),
+      feedbackSchedule:parsed.step9?.feedbackSchedule||'',
+      improvementLoop:parsed.step9?.improvementLoop||'',
+      successMetrics:normalizeArray(parsed.step9?.successMetrics)
     };
 
-    const unitName = parsed.unitName || (uploadedFileName ? uploadedFileName.replace(/\.[^/.]+$/, '') : '') || 'AI-Generated Unit';
+    const unitName=parsed.unitName||(uploadedFileName?uploadedFileName.replace(/\.[^/.]+$/,''):'')||'AI-Generated Unit';
+    const unitDesc=parsed.unitDescription||'';
 
-    if(targetVal === 'new'){
-      const newId = Date.now();
-      state.units.push({id:newId,name:unitName,data:newData,aiGenerated:true});
-      state.activeUnit = newId;
+    if(targetVal==='new'){
+      const newId=Date.now();
+      state.units.push({id:newId, name:unitName, description:unitDesc, data:newData, aiGenerated:true});
+      state.activeUnit=newId;
     } else {
-      const target = getUnit(parseInt(targetVal, 10));
-      if(target){
-        target.name = unitName;
-        target.data = newData;
-        target.aiGenerated = true;
-      }
+      const target=getUnit(parseInt(targetVal,10));
+      if(target){ target.name=unitName; target.description=unitDesc; target.data=newData; target.aiGenerated=true; }
     }
 
-    state.activeStep = 1;
+    state.activeStep=1;
     setGenStep(7,true);
+    statusEl.className='ai-status success';
+    statusEl.innerHTML=`<strong>✅ Done!</strong> "${escHtml(unitName)}" has been structured across all 9 design steps.`;
 
-    statusEl.className = 'ai-status success';
-    statusEl.innerHTML = `<strong>✅ Done!</strong> "${escHtml(unitName)}" has been structured across all 9 design steps.`;
-
-    setTimeout(()=>{
-      document.getElementById('importModal').classList.remove('open');
-      render();
-    },1500);
+    setTimeout(()=>{ document.getElementById('importModal').classList.remove('open'); render(); },1500);
 
   }catch(err){
-    statusEl.className = 'ai-status error';
-    statusEl.innerHTML = `<strong>⚠️ Error:</strong> ${escHtml(err.message)}`;
+    statusEl.className='ai-status error';
+    statusEl.innerHTML=`<strong>⚠️ Error:</strong> ${escHtml(err.message)}`;
     console.error(err);
   }finally{
-    btn.disabled = false;
+    btn.disabled=false;
   }
 }
 
